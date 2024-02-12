@@ -79,7 +79,7 @@ select:
   # Register: 1
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Operational Mode"
+    name: "001 ${entity_prefix} Operational Mode"
     id: "${devicename}_operational_mode"
     icon: "mdi:fan"
     address: 0x1
@@ -92,7 +92,7 @@ select:
   # Register: 269, default: 0
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Power Input Limitation Type"
+    name: "269 ${entity_prefix} Power Input Limitation Type"
     id: "${devicename}_power_input_limitation_type"
     address: 0x10d
     value_type: U_WORD
@@ -110,7 +110,7 @@ select:
   # Register: 272 (bits 0-3), default: 1
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Zone 1 End Heating Mode Emission Type"
+    name: "272 ${entity_prefix} Zone 1 End Heating Mode Emission Type"
     id: "${devicename}_zone_1_end_heating_mode_emission_type"
     address: 0x110
     value_type: U_WORD
@@ -162,7 +162,7 @@ select:
   # Register: 272 (bits 4-7), default: 2
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Zone 2 End Heating Mode Emission Type"
+    name: "272 ${entity_prefix} Zone 2 End Heating Mode Emission Type"
     id: "${devicename}_zone_2_end_heating_mode_emission_type"
     address: 0x110
     value_type: U_WORD
@@ -213,7 +213,7 @@ select:
   # Register: 272 (bits 8-11), default: 0
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Zone 1 End Cooling Mode Emission Type"
+    name: "272 ${entity_prefix} Zone 1 End Cooling Mode Emission Type"
     id: "${devicename}_zone_1_end_cooling_mode_emission_type"
     address: 0x110
     value_type: U_WORD
@@ -264,7 +264,7 @@ select:
   # Register: 272 (bits 12-15), default: 0
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Zone 2 End Cooling Mode Emission Type"
+    name: "272 ${entity_prefix} Zone 2 End Cooling Mode Emission Type"
     id: "${devicename}_zone_2_end_cooling_mode_emission_type"
     address: 0x110
     value_type: U_WORD
@@ -321,7 +321,7 @@ sensor:
   # Register: 3
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Air Temperature Ts"
+    name: "003 ${entity_prefix} Air Temperature Ts"
     id: "${devicename}_air_temperature_ts"
     register_type: holding
     address: 0x3
@@ -332,7 +332,7 @@ sensor:
   # Register: 4
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} DHW Tank Temperature T5s"
+    name: "004 ${entity_prefix} DHW Tank Temperature T5s"
     id: "${devicename}_dhw_tank_temperature_t5s"
     register_type: holding
     address: 0x4
@@ -342,7 +342,7 @@ sensor:
   # Register: 7
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Forced Water Tank Heating"
+    name: "007 ${entity_prefix} Forced Water Tank Heating"
     id: "${devicename}_forced_water_tank_heating"
     register_type: holding
     address: 0x7
@@ -350,7 +350,7 @@ sensor:
   # Register: 8
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Forced Tank Backup Heater"
+    name: "008 ${entity_prefix} Forced Tank Backup Heater"
     id: "${devicename}_forced_tbh"
     register_type: holding
     address: 0x8
@@ -358,7 +358,7 @@ sensor:
   # Register: 9
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Forced Hydraulic Module Rear Electric Heater 1"
+    name: "009 ${entity_prefix} Forced Hydraulic Module Rear Electric Heater 1"
     id: "${devicename}_forced_hydraulic_module_rear_electric_heater_1"
     register_type: holding
     address: 0x9
@@ -366,7 +366,7 @@ sensor:
   # Register: 10
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} t_SG_MAX"
+    name: "010 ${entity_prefix} t_SG_MAX"
     id: "${devicename}_t_sg_max"
     register_type: holding
     address: 0xa
@@ -376,7 +376,7 @@ sensor:
   # Register: 100
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Compressor Operating Frequency"
+    name: "100 ${entity_prefix} Compressor Operating Frequency"
     id: "${devicename}_compressor_operating_frequency"
     register_type: holding
     address: 0x64
@@ -385,7 +385,7 @@ sensor:
   # Register: 101
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Operating Mode"
+    name: "101 ${entity_prefix} Operating Mode"
     id: "${devicename}_operating_mode"
     register_type: holding
     address: 0x65
@@ -393,7 +393,7 @@ sensor:
   # Register: 102
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Fan Speed"
+    name: "102 ${entity_prefix} Fan Speed"
     id: "${devicename}_fan_speed"
     register_type: holding
     address: 0x66
@@ -403,7 +403,7 @@ sensor:
   # Register: 103
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} PMV Openness"
+    name: "103 ${entity_prefix} PMV Openness"
     id: "${devicename}_pmv_openness"
     register_type: holding
     address: 0x67
@@ -412,7 +412,7 @@ sensor:
   # Register: 104
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Water Inlet Temperature"
+    name: "104 ${entity_prefix} Water Inlet Temperature"
     id: "${devicename}_water_inlet_temperature"
     register_type: holding
     address: 0x68
@@ -421,7 +421,7 @@ sensor:
   # Register: 105
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Water Outlet Temperature"
+    name: "105 ${entity_prefix} Water Outlet Temperature"
     id: "${devicename}_water_outlet_temperature"
     register_type: holding
     address: 0x69
@@ -430,7 +430,7 @@ sensor:
   # Register: 106
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Condensor Temperature T3"
+    name: "106 ${entity_prefix} Condensor Temperature T3"
     id: "${devicename}_condensor_temperature_t3"
     register_type: holding
     address: 0x6a
@@ -439,7 +439,7 @@ sensor:
   # Register: 107
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Outdoor Ambient Temperature"
+    name: "107 ${entity_prefix} Outdoor Ambient Temperature"
     id: "${devicename}_outdoor_ambient_temperature"
     register_type: holding
     address: 0x6B
@@ -448,7 +448,7 @@ sensor:
   # Register: 108
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Discharge Temperature"
+    name: "108 ${entity_prefix} Discharge Temperature"
     id: "${devicename}_discharge_temperature"
     register_type: holding
     address: 0x6c
@@ -457,7 +457,7 @@ sensor:
   # Register: 109
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Return Air Temperature"
+    name: "109 ${entity_prefix} Return Air Temperature"
     id: "${devicename}_return_air_temperature"
     register_type: holding
     address: 0x6d
@@ -466,7 +466,7 @@ sensor:
   # Register: 110
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Total Water Outlet Temperature T1"
+    name: "110 ${entity_prefix} Total Water Outlet Temperature T1"
     id: "${devicename}_total_water_outlet_temperature_t1"
     register_type: holding
     address: 0x6e
@@ -475,7 +475,7 @@ sensor:
   # Register: 111
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} System Total Water Outlet Temperature T1B"
+    name: "111 ${entity_prefix} System Total Water Outlet Temperature T1B"
     id: "${devicename}_system_total_water_outlet_temperature_t1b"
     register_type: holding
     address: 0x6f
@@ -484,7 +484,7 @@ sensor:
   # Register: 112
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Refrigerant Liquid Side Temperature T2"
+    name: "112 ${entity_prefix} Refrigerant Liquid Side Temperature T2"
     id: "${devicename}_refrigerant_liquid_side_temperature_t2"
     register_type: holding
     address: 0x70
@@ -493,7 +493,7 @@ sensor:
   # Register: 113
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Refrigerant Gas Side Temperature T2B"
+    name: "113 ${entity_prefix} Refrigerant Gas Side Temperature T2B"
     id: "${devicename}_refrigerant_gas_side_temperature_t2b"
     register_type: holding
     address: 0x71
@@ -502,7 +502,7 @@ sensor:
   # Register: 114
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Room Temperature Ta"
+    name: "114 ${entity_prefix} Room Temperature Ta"
     id: "${devicename}_room_temperature_ta"
     register_type: holding
     address: 0x72
@@ -511,7 +511,7 @@ sensor:
   # Register: 115
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Water Tank Temperature T5"
+    name: "115 ${entity_prefix} Water Tank Temperature T5"
     id: "${devicename}_water_tank_temperature_t5"
     register_type: holding
     address: 0x73
@@ -521,7 +521,7 @@ sensor:
   # Register: 116
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Outdoor Unit High Pressure"
+    name: "116 ${entity_prefix} Outdoor Unit High Pressure"
     id: "${devicename}_outdoor_unit_high_pressure"
     register_type: holding
     address: 0x74
@@ -530,7 +530,7 @@ sensor:
   # Register: 117
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix}  Outdoor Unit Low Pressure"
+    name: "117 ${entity_prefix}  Outdoor Unit Low Pressure"
     id: "${devicename}_outdoor_unit_low_pressure"
     register_type: holding
     address: 0x75
@@ -539,7 +539,7 @@ sensor:
   # Register: 118
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Outdoor Unit Current"
+    name: "118 ${entity_prefix} Outdoor Unit Current"
     id: "${devicename}_outdoor_unit_current"
     register_type: holding
     address: 0x76
@@ -548,7 +548,7 @@ sensor:
   # Register: 119
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Outdoor Unit Voltage"
+    name: "119 ${entity_prefix} Outdoor Unit Voltage"
     id: "${devicename}_outdoor_unit_voltage"
     register_type: holding
     address: 0x77
@@ -558,7 +558,7 @@ sensor:
   # Midea: Tbt1
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Hydraulic Module Current 1"
+    name: "120 ${entity_prefix} Hydraulic Module Current 1"
     id: "${devicename}_hydraulic_module_current_1"
     register_type: holding
     address: 0x78
@@ -567,7 +567,7 @@ sensor:
   # Midea: Tbt2
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Hydraulic Module Current 2"
+    name: "121 ${entity_prefix} Hydraulic Module Current 2"
     id: "${devicename}_hydraulic_module_current_2"
     register_type: holding
     address: 0x79
@@ -575,7 +575,7 @@ sensor:
   # Register: 122
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Compressor Operation Time"
+    name: "122 ${entity_prefix} Compressor Operation Time"
     id: "${devicename}_compressor_operation_time"
     register_type: holding
     address: 0x7a
@@ -584,7 +584,7 @@ sensor:
   # Register: 123
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Unit Capacity"
+    name: "123 ${entity_prefix} Unit Capacity"
     id: "${devicename}_unit_capacity"
     register_type: holding
     address: 0x7b
@@ -592,7 +592,7 @@ sensor:
   # Register: 124
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Current Fault"
+    name: "124 ${entity_prefix} Current Fault"
     id: "${devicename}_current_fault"
     register_type: holding
     entity_category: diagnostic
@@ -601,7 +601,7 @@ sensor:
   # Register: 125
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Fault 1"
+    name: "125 ${entity_prefix} Fault 1"
     id: "${devicename}_fault_1"
     register_type: holding
     entity_category: diagnostic
@@ -610,7 +610,7 @@ sensor:
   # Register: 126
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Fault 2"
+    name: "126 ${entity_prefix} Fault 2"
     id: "${devicename}_fault_2"
     register_type: holding
     entity_category: diagnostic
@@ -619,7 +619,7 @@ sensor:
   # Register: 127
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Fault 3"
+    name: "127 ${entity_prefix} Fault 3"
     id: "${devicename}_fault_3"
     register_type: holding
     entity_category: diagnostic
@@ -628,7 +628,7 @@ sensor:
   # Register: 130
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Software Version"
+    name: "130 ${entity_prefix} Software Version"
     id: "${devicename}_software_version"
     register_type: holding
     address: 0x82
@@ -636,7 +636,7 @@ sensor:
   # Register: 131
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Wired Controller Version Number"
+    name: "131 ${entity_prefix} Wired Controller Version Number"
     id: "${devicename}_wired_controller_version_number"
     register_type: holding
     address: 0x83
@@ -644,7 +644,7 @@ sensor:
   # Register: 132
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Compressor Target Frequency"
+    name: "132 ${entity_prefix} Compressor Target Frequency"
     id: "${devicename}_compressor_target_frequency"
     register_type: holding
     address: 0x84
@@ -653,7 +653,7 @@ sensor:
   # Register: 133
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} DC Bus Current"
+    name: "133 ${entity_prefix} DC Bus Current"
     id: "${devicename}_dc_bus_current"
     register_type: holding
     address: 0x85
@@ -662,7 +662,7 @@ sensor:
   # Register: 134
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} DC Bus Voltage"
+    name: "134 ${entity_prefix} DC Bus Voltage"
     id: "${devicename}_dc_bus_voltage"
     register_type: holding
     address: 0x86
@@ -673,7 +673,7 @@ sensor:
   # Register: 135
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} TF module temperature"
+    name: "135 ${entity_prefix} TF module temperature"
     id: "${devicename}_tf_module_temperature"
     register_type: holding
     address: 0x87
@@ -682,7 +682,7 @@ sensor:
   # Register: 136
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Climate Curve T1S Calculated Value 1"
+    name: "136 ${entity_prefix} Climate Curve T1S Calculated Value 1"
     id: "${devicename}_climate_curve_t1s_calculated_value_1"
     register_type: holding
     address: 0x88
@@ -691,7 +691,7 @@ sensor:
   # Register: 137
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Climate Curve T1S Calculated Value 2"
+    name: "137 ${entity_prefix} Climate Curve T1S Calculated Value 2"
     id: "${devicename}_climate_curve_t1s_calculated_value_2"
     register_type: holding
     address: 0x89
@@ -700,7 +700,7 @@ sensor:
   # Register: 138
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Water Flow"
+    name: "138 ${entity_prefix} Water Flow"
     id: "${devicename}_water_flow"
     register_type: holding
     address: 0x8a
@@ -712,7 +712,7 @@ sensor:
   # Register: 139
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Limit Scheme Of Outdoor Unit Current"
+    name: "139 ${entity_prefix} Limit Scheme Of Outdoor Unit Current"
     id: "${devicename}_limit_scheme_of_outdoor_unit_current"
     register_type: holding
     address: 0x8b
@@ -720,7 +720,7 @@ sensor:
   # Register: 140
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Ability Of Hydraulic Module"
+    name: "140 ${entity_prefix} Ability Of Hydraulic Module"
     id: "${devicename}_ability_of_hydraulic_module"
     register_type: holding
     address: 0x8c
@@ -732,7 +732,7 @@ sensor:
   # Register: 141
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Tsolar"
+    name: "141 ${entity_prefix} Tsolar"
     id: "${devicename}_tsolar"
     register_type: holding
     address: 0x8d
@@ -741,7 +741,7 @@ sensor:
   # U_DWORD combines this register with the next one
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Electricity Consumption"
+    name: "143 ${entity_prefix} Electricity Consumption"
     id: "${devicename}_electricity_consumption"
     register_type: holding
     unit_of_measurement: "kWh"
@@ -752,7 +752,7 @@ sensor:
   # U_DWORD combines this register with the next one
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Power Output"
+    name: "145 ${entity_prefix} Power Output"
     id: "${devicename}_power_output"
     register_type: holding
     unit_of_measurement: "kWh"
@@ -765,7 +765,7 @@ sensor:
   # Register: 200 (High byte)
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Home Appliance Type"
+    name: "200 ${entity_prefix} Home Appliance Type"
     id: "${devicename}_home_appliance_type"
     register_type: holding
     address: 0xc8
@@ -774,7 +774,7 @@ sensor:
   # Register: 200 (Low byte, first 4 bits)
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Home Appliance Sub Type"
+    name: "200 ${entity_prefix} Home Appliance Sub Type"
     id: "${devicename}_home_appliance_sub_type"
     register_type: holding
     address: 0xc8
@@ -783,7 +783,7 @@ sensor:
   # Register: 200 (Low byte, second 4 bits)
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Home Appliance Product Code"
+    name: "200 ${entity_prefix} Home Appliance Product Code"
     id: "${devicename}_home_appliance_product_code"
     register_type: holding
     address: 0xc8
@@ -792,7 +792,7 @@ sensor:
   # Register: 201 (Low), default: 25, TODO: verify default
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Temperature Upper Limit Of T1S Cooling Zone 1"
+    name: "201 ${entity_prefix} Temperature Upper Limit Of T1S Cooling Zone 1"
     id: "${devicename}_temperature_upper_limit_of_t1s_cooling_zone_1"
     register_type: holding
     address: 0xc9
@@ -802,7 +802,7 @@ sensor:
   # Register: 201 (High), default: 25, TODO: verify default
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Temperature Upper Limit Of T1S Cooling Zone 2"
+    name: "201 ${entity_prefix} Temperature Upper Limit Of T1S Cooling Zone 2"
     id: "${devicename}_temperature_upper_limit_of_t1s_cooling_zone_2"
     register_type: holding
     address: 0xc9
@@ -812,7 +812,7 @@ sensor:
   # Register: 202 (Low), default: 5, TODO: verify default
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Temperature Lower Limit Of T1S Cooling Zone 1"
+    name: "202 ${entity_prefix} Temperature Lower Limit Of T1S Cooling Zone 1"
     id: "${devicename}_temperature_lower_limit_of_t1s_cooling_zone_1"
     register_type: holding
     address: 0xca
@@ -822,7 +822,7 @@ sensor:
   # Register: 202 (High), default: 5, TODO: verify default
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Temperature Lower Limit Of T1S Cooling Zone 2"
+    name: "202 ${entity_prefix} Temperature Lower Limit Of T1S Cooling Zone 2"
     id: "${devicename}_temperature_lower_limit_of_t1s_cooling_zone_2"
     register_type: holding
     address: 0xca
@@ -832,7 +832,7 @@ sensor:
   # Register: 203 (Low), default: 55, TODO: verify default
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Temperature Upper Limit Of T1S Heating Zone 1"
+    name: "203 ${entity_prefix} Temperature Upper Limit Of T1S Heating Zone 1"
     id: "${devicename}_temperature_upper_limit_of_t1s_heating_zone_1"
     register_type: holding
     address: 0xcb
@@ -842,7 +842,7 @@ sensor:
   # Register: 203 (High), default: 55, TODO: verify default
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Temperature Upper Limit Of T1S Heating Zone 2"
+    name: "203 ${entity_prefix} Temperature Upper Limit Of T1S Heating Zone 2"
     id: "${devicename}_temperature_upper_limit_of_t1s_heating_zone_2"
     register_type: holding
     address: 0xcb
@@ -852,7 +852,7 @@ sensor:
   # Register: 204 (Low), default: 25, TODO: verify default
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Temperature Lower Limit Of T1S Heating Zone 1"
+    name: "204 ${entity_prefix} Temperature Lower Limit Of T1S Heating Zone 1"
     id: "${devicename}_temperature_lower_limit_of_t1s_heating_zone_1"
     register_type: holding
     address: 0xcc
@@ -862,7 +862,7 @@ sensor:
   # Register: 204 (High), default: 25, TODO: verify default
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Temperature Lower Limit Of T1S Heating Zone 2"
+    name: "204 ${entity_prefix} Temperature Lower Limit Of T1S Heating Zone 2"
     id: "${devicename}_temperature_lower_limit_of_t1s_heating_zone_2"
     register_type: holding
     address: 0xcc
@@ -872,7 +872,7 @@ sensor:
   # Register: 205
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Temperature Upper Limit Of TS Setting"
+    name: "205 ${entity_prefix} Temperature Upper Limit Of TS Setting"
     id: "${devicename}_temperature_upper_limit_of_ts_setting"
     register_type: holding
     address: 0xcd
@@ -883,7 +883,7 @@ sensor:
   # Register: 206
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Temperature Lower Limit Of TS Setting"
+    name: "206 ${entity_prefix} Temperature Lower Limit Of TS Setting"
     id: "${devicename}_temperature_lower_limit_of_ts_setting"
     register_type: holding
     address: 0xce
@@ -894,7 +894,7 @@ sensor:
   # Register: 207
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Temperature Upper Limit Of water Heating"
+    name: "207 ${entity_prefix} Temperature Upper Limit Of water Heating"
     id: "${devicename}_temperature_upper_limit_of_water_heating"
     register_type: holding
     address: 0xcf
@@ -903,7 +903,7 @@ sensor:
   # Register: 208
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Temperature Lower Limit Of Water Heating"
+    name: "208 ${entity_prefix} Temperature Lower Limit Of Water Heating"
     id: "${devicename}_temperature_lower_limit_of_water_heating"
     register_type: holding
     address: 0xd0
@@ -952,7 +952,7 @@ sensor:
   # Register: 253
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Comfort Parameter Reserved 3"
+    name: "253 ${entity_prefix} Comfort Parameter Reserved 3"
     id: "${devicename}_comfort_parameter_3"
     register_type: holding
     address: 0xfd
@@ -960,7 +960,7 @@ sensor:
   # Register: 254
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Comfort Parameter Reserved 4"
+    name: "254 ${entity_prefix} Comfort Parameter Reserved 4"
     id: "${devicename}_comfort_parameter_4"
     register_type: holding
     address: 0xfe
@@ -989,7 +989,7 @@ binary_sensor:
   # Bit: 0
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Power Floor Heating Zone 1"
+    name: "000 ${entity_prefix} Power Floor Heating Zone 1"
     id: "${devicename}_power_floor_heating_zone_1"
     register_type: holding
     address: 0x0
@@ -997,7 +997,7 @@ binary_sensor:
   # Bit: 1
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Power Air Conditioner Zone 1"
+    name: "000 ${entity_prefix} Power Air Conditioner Zone 1"
     id: "${devicename}_power_air_conditioner_zone_1"
     register_type: holding
     address: 0x0
@@ -1006,7 +1006,7 @@ binary_sensor:
   # Bit: 3
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Power Air Conditioner Zone 2"
+    name: "000 ${entity_prefix} Power Air Conditioner Zone 2"
     id: "${devicename}_power_air_conditioner_zone_2"
     register_type: holding
     address: 0x0
@@ -1014,7 +1014,7 @@ binary_sensor:
   # Bit: 4
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Power Reserved BIT 4"
+    name: "000 ${entity_prefix} Power Reserved BIT 4"
     id: "${devicename}_power_reserved_bit_4"
     register_type: holding
     address: 0x0
@@ -1022,7 +1022,7 @@ binary_sensor:
   # Bit: 5
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Power Reserved BIT 5"
+    name: "000 ${entity_prefix} Power Reserved BIT 5"
     id: "${devicename}_power_reserved_bit_5"
     register_type: holding
     address: 0x0
@@ -1030,7 +1030,7 @@ binary_sensor:
   # Bit: 6
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Power Reserved BIT 6"
+    name: "000 ${entity_prefix} Power Reserved BIT 6"
     id: "${devicename}_power_reserved_bit_6"
     register_type: holding
     address: 0x0
@@ -1038,7 +1038,7 @@ binary_sensor:
   # Bit: 7
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Power Reserved BIT 7"
+    name: "000 ${entity_prefix} Power Reserved BIT 7"
     id: "${devicename}_power_reserved_bit_7"
     register_type: holding
     address: 0x0
@@ -1046,7 +1046,7 @@ binary_sensor:
   # Bit: 8
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Power Reserved BIT 8"
+    name: "000 ${entity_prefix} Power Reserved BIT 8"
     id: "${devicename}_power_reserved_bit_8"
     register_type: holding
     address: 0x0
@@ -1054,7 +1054,7 @@ binary_sensor:
   # Bit: 9
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Power Reserved BIT 9"
+    name: "000 ${entity_prefix} Power Reserved BIT 9"
     id: "${devicename}_power_reserved_bit_9"
     register_type: holding
     address: 0x0
@@ -1062,7 +1062,7 @@ binary_sensor:
   # Bit: 10
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Power Reserved BIT 10"
+    name: "000 ${entity_prefix} Power Reserved BIT 10"
     id: "${devicename}_power_reserved_bit_10"
     register_type: holding
     address: 0x0
@@ -1070,7 +1070,7 @@ binary_sensor:
   # Bit: 11
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Power Reserved BIT 11"
+    name: "000 ${entity_prefix} Power Reserved BIT 11"
     id: "${devicename}_power_reserved_bit_11"
     register_type: holding
     address: 0x0
@@ -1078,7 +1078,7 @@ binary_sensor:
   # Bit: 12
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Power Reserved BIT 12"
+    name: "000 ${entity_prefix} Power Reserved BIT 12"
     id: "${devicename}_power_reserved_bit_12"
     register_type: holding
     address: 0x0
@@ -1086,7 +1086,7 @@ binary_sensor:
   # Bit: 13
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Power Reserved BIT 13"
+    name: "000 ${entity_prefix} Power Reserved BIT 13"
     id: "${devicename}_power_reserved_bit_13"
     register_type: holding
     address: 0x0
@@ -1094,7 +1094,7 @@ binary_sensor:
   # Bit: 14
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Power Reserved BIT 14"
+    name: "000 ${entity_prefix} Power Reserved BIT 14"
     id: "${devicename}_power_reserved_bit_14"
     register_type: holding
     address: 0x0
@@ -1102,7 +1102,7 @@ binary_sensor:
   # Bit: 15
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Power Reserved BIT 15"
+    name: "000 ${entity_prefix} Power Reserved BIT 15"
     id: "${devicename}_power_reserved_bit_15"
     register_type: holding
     address: 0x0
@@ -1112,7 +1112,7 @@ binary_sensor:
   # Bit: 0
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Function Setting Reserved BIT 0"
+    name: "005 ${entity_prefix} Function Setting Reserved BIT 0"
     id: "${devicename}_function_setting_reserved_bit_0"
     register_type: holding
     address: 0x5
@@ -1120,7 +1120,7 @@ binary_sensor:
   # Bit: 1
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Function Setting Reserved BIT 1"
+    name: "005 ${entity_prefix} Function Setting Reserved BIT 1"
     id: "${devicename}_function_setting_reserved_bit_1"
     register_type: holding
     address: 0x5
@@ -1128,7 +1128,7 @@ binary_sensor:
   # Bit: 2
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Function Setting Reserved BIT 2"
+    name: "005 ${entity_prefix} Function Setting Reserved BIT 2"
     id: "${devicename}_function_setting_reserved_bit_2"
     register_type: holding
     address: 0x5
@@ -1136,7 +1136,7 @@ binary_sensor:
   # Bit: 3
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Function Setting Reserved BIT 3"
+    name: "005 ${entity_prefix} Function Setting Reserved BIT 3"
     id: "${devicename}_function_setting_reserved_bit_3"
     register_type: holding
     address: 0x5
@@ -1144,7 +1144,7 @@ binary_sensor:
   # Bit: 4
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Function Setting Disinfect"
+    name: "005 ${entity_prefix} Function Setting Disinfect"
     id: "${devicename}_function_setting_disinfect"
     register_type: holding
     address: 0x5
@@ -1152,7 +1152,7 @@ binary_sensor:
   # Bit: 5
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Function Setting Holiday Away"
+    name: "005 ${entity_prefix} Function Setting Holiday Away"
     id: "${devicename}_function_setting_holiday_away"
     register_type: holding
     address: 0x5
@@ -1160,7 +1160,7 @@ binary_sensor:
   # Bit: 6
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Function Setting Silent Mode"
+    name: "005 ${entity_prefix} Function Setting Silent Mode"
     id: "${devicename}_function_setting_silent_mode"
     register_type: holding
     address: 0x5
@@ -1168,7 +1168,7 @@ binary_sensor:
   # Bit: 7
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Function Setting Silent Mode Level"
+    name: "005 ${entity_prefix} Function Setting Silent Mode Level"
     id: "${devicename}_function_setting_silent_mode_level"
     register_type: holding
     address: 0x5
@@ -1176,7 +1176,7 @@ binary_sensor:
   # Bit: 8
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Function Setting Holiday Home"
+    name: "005 ${entity_prefix} Function Setting Holiday Home"
     id: "${devicename}_function_setting_holiday_home"
     register_type: holding
     address: 0x5
@@ -1184,7 +1184,7 @@ binary_sensor:
   # Bit: 9
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Function Setting Reserved BIT 9"
+    name: "005 ${entity_prefix} Function Setting Reserved BIT 9"
     id: "${devicename}_function_setting_reserved_bit_9"
     register_type: holding
     address: 0x5
@@ -1192,7 +1192,7 @@ binary_sensor:
   # Bit: 10
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Function Setting ECO Mode"
+    name: "005 ${entity_prefix} Function Setting ECO Mode"
     id: "${devicename}_function_setting_eco_mode"
     register_type: holding
     address: 0x5
@@ -1200,7 +1200,7 @@ binary_sensor:
   # Bit: 11
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Function Setting DHW Pumps Running Constant Temperature Water Recycling"
+    name: "005 ${entity_prefix} Function Setting DHW Pumps Running Constant Temperature Water Recycling"
     id: "${devicename}_function_setting_dhw_pumps_running_constant_temperature_water_recycling"
     register_type: holding
     address: 0x5
@@ -1210,7 +1210,7 @@ binary_sensor:
   # Bit: 14
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Function Setting Reserved BIT 14"
+    name: "005 ${entity_prefix} Function Setting Reserved BIT 14"
     id: "${devicename}_function_setting_reserved_bit_14"
     register_type: holding
     address: 0x5
@@ -1218,7 +1218,7 @@ binary_sensor:
   # Bit: 15
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Function Setting Reserved BIT 15"
+    name: "005 ${entity_prefix} Function Setting Reserved BIT 15"
     id: "${devicename}_function_setting_reserved_bit_15"
     register_type: holding
     address: 0x5
@@ -1228,7 +1228,7 @@ binary_sensor:
   # Bit: 0
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Status BIT 1 Reserved BIT 0"
+    name: "128 ${entity_prefix} Status BIT 1 Reserved BIT 0"
     id: "${devicename}_status_bit_1_reserved_bit_0"
     register_type: holding
     address: 0x80
@@ -1236,7 +1236,7 @@ binary_sensor:
   # Bit: 1
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Status BIT 1 Defrosting"
+    name: "128 ${entity_prefix} Status BIT 1 Defrosting"
     id: "${devicename}_status_bit_1_defrosting"
     register_type: holding
     address: 0x80
@@ -1244,7 +1244,7 @@ binary_sensor:
   # Bit: 2
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Status BIT 1 Anti Freezing"
+    name: "128 ${entity_prefix} Status BIT 1 Anti Freezing"
     id: "${devicename}_status_bit_1_anti_freezing"
     register_type: holding
     address: 0x80
@@ -1252,7 +1252,7 @@ binary_sensor:
   # Bit: 3
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Status BIT 1 Oil Return"
+    name: "128 ${entity_prefix} Status BIT 1 Oil Return"
     id: "${devicename}_status_bit_1_oil_return"
     register_type: holding
     address: 0x80
@@ -1260,7 +1260,7 @@ binary_sensor:
   # Bit: 4
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Status BIT 1 Remote On/Off"
+    name: "128 ${entity_prefix} Status BIT 1 Remote On/Off"
     id: "${devicename}_status_bit_1_remote_on_off"
     register_type: holding
     address: 0x80
@@ -1268,7 +1268,7 @@ binary_sensor:
   # Bit: 5
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Status BIT 1 Outdoor Unit Test Mode Mark"
+    name: "128 ${entity_prefix} Status BIT 1 Outdoor Unit Test Mode Mark"
     id: "${devicename}_status_bit_1_outdoor_unit_test_mode_mark"
     register_type: holding
     address: 0x80
@@ -1276,7 +1276,7 @@ binary_sensor:
   # Bit: 6
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Status BIT 1 Heating Mode Set By Room Thermostat"
+    name: "128 ${entity_prefix} Status BIT 1 Heating Mode Set By Room Thermostat"
     id: "${devicename}_status_bit_1_heating_mode_set_by_room_thermostat"
     register_type: holding
     address: 0x80
@@ -1284,7 +1284,7 @@ binary_sensor:
   # Bit: 7
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Status BIT 1 Cooling Mode Set By Room Thermostat"
+    name: "128 ${entity_prefix} Status BIT 1 Cooling Mode Set By Room Thermostat"
     id: "${devicename}_status_bit_1_cooling_mode_set_by_room_thermostat"
     register_type: holding
     address: 0x80
@@ -1292,7 +1292,7 @@ binary_sensor:
   # Bit: 8
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Status BIT 1 Solar Energy Signal Input"
+    name: "128 ${entity_prefix} Status BIT 1 Solar Energy Signal Input"
     id: "${devicename}_status_bit_1_solar_energy_signal_input"
     register_type: holding
     address: 0x80
@@ -1300,7 +1300,7 @@ binary_sensor:
   # Bit: 9
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Status BIT 1 Anti Freezing Operation For Water Tank"
+    name: "128 ${entity_prefix} Status BIT 1 Anti Freezing Operation For Water Tank"
     id: "${devicename}_status_bit_1_anti_freezing_operation_for_water_tank"
     register_type: holding
     address: 0x80
@@ -1308,7 +1308,7 @@ binary_sensor:
   # Bit: 10
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Status BIT 1 SG"
+    name: "128 ${entity_prefix} Status BIT 1 SG"
     id: "${devicename}_status_bit_1_sg"
     register_type: holding
     address: 0x80
@@ -1316,14 +1316,14 @@ binary_sensor:
   # Bit: 11
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Status BIT 1 EUV"
+    name: "128 ${entity_prefix} Status BIT 1 EUV"
     id: "${devicename}_status_bit_1_euv"
     register_type: holding
     address: 0x80
     bitmask: 0x800
   # Bit: 12
   - platform: modbus_controller
-    name: "${entity_prefix} Status BIT 1 Reserved BIT 12"
+    name: "128 ${entity_prefix} Status BIT 1 Reserved BIT 12"
     modbus_controller_id: "${devicename}"
     id: "${devicename}_status_bit_1_reserved_bit_12"
     register_type: holding
@@ -1332,7 +1332,7 @@ binary_sensor:
   # Bit: 13
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Status BIT 1 Request Serial Number Code"
+    name: "128 ${entity_prefix} Status BIT 1 Request Serial Number Code"
     id: "${devicename}_status_bit_1_request_serial_number_code"
     register_type: holding
     address: 0x80
@@ -1340,7 +1340,7 @@ binary_sensor:
   # Bit: 14
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Status BIT 1 Request Software Version"
+    name: "128 ${entity_prefix} Status BIT 1 Request Software Version"
     id: "${devicename}_status_bit_1_request_software_version"
     register_type: holding
     address: 0x80
@@ -1348,7 +1348,7 @@ binary_sensor:
   # Bit: 15
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Status BIT 1 Request Operation Parameter"
+    name: "128 ${entity_prefix} Status BIT 1 Request Operation Parameter"
     id: "${devicename}_status_bit_1_request_operation_parameter"
     register_type: holding
     address: 0x80
@@ -1358,7 +1358,7 @@ binary_sensor:
   # Bit: 0
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Load Output Electric Heater IBH 1"
+    name: "129 ${entity_prefix} Load Output Electric Heater IBH 1"
     id: "${devicename}_load_output_electric_heater_ibh1"
     register_type: holding
     address: 0x81
@@ -1366,7 +1366,7 @@ binary_sensor:
   # Bit: 1
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Load Output Electric Heater IBH 2"
+    name: "129 ${entity_prefix} Load Output Electric Heater IBH 2"
     id: "${devicename}_load_output_reserved"
     register_type: holding
     address: 0x81
@@ -1374,7 +1374,7 @@ binary_sensor:
   # Bit: 2
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Load Output Electric Heater TBH"
+    name: "129 ${entity_prefix} Load Output Electric Heater TBH"
     id: "${devicename}_load_output_electric_heater_tbh"
     register_type: holding
     address: 0x81
@@ -1382,7 +1382,7 @@ binary_sensor:
   # Bit: 3
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Load Output Water Pump PUMP_I"
+    name: "129 ${entity_prefix} Load Output Water Pump PUMP_I"
     id: "${devicename}_load_output_water_pump_pump_i"
     register_type: holding
     address: 0x81
@@ -1390,7 +1390,7 @@ binary_sensor:
   # Bit: 4
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Load Output SV 1"
+    name: "129 ${entity_prefix} Load Output SV 1"
     id: "${devicename}_load_output_sv1"
     register_type: holding
     address: 0x81
@@ -1398,7 +1398,7 @@ binary_sensor:
   # Bit: 5
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Load Output Reserved BIT 5"
+    name: "129 ${entity_prefix} Load Output Reserved BIT 5"
     id: "${devicename}_load_output_reserved_bit_5"
     register_type: holding
     address: 0x81
@@ -1406,7 +1406,7 @@ binary_sensor:
   # Bit: 6
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Load Output External Water Pump P_o"
+    name: "129 ${entity_prefix} Load Output External Water Pump P_o"
     id: "${devicename}_load_output_external_water_pump_p_o"
     register_type: holding
     address: 0x81
@@ -1414,7 +1414,7 @@ binary_sensor:
   # Bit: 7
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Load Output Water Return Water P_d"
+    name: "129 ${entity_prefix} Load Output Water Return Water P_d"
     id: "${devicename}_load_output_water_return_water_p_d"
     register_type: holding
     address: 0x81
@@ -1422,7 +1422,7 @@ binary_sensor:
   # Bit: 8
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Load Output Mixed Water Pump P_c"
+    name: "129 ${entity_prefix} Load Output Mixed Water Pump P_c"
     id: "${devicename}_load_output_mixed_water_pump_p_c"
     register_type: holding
     address: 0x81
@@ -1430,7 +1430,7 @@ binary_sensor:
   # Bit: 9
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Load Output SV 2"
+    name: "129 ${entity_prefix} Load Output SV 2"
     id: "${devicename}_load_output_sv2"
     register_type: holding
     address: 0x81
@@ -1438,7 +1438,7 @@ binary_sensor:
   # Bit: 10
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Load Output HEAT 4"
+    name: "192 ${entity_prefix} Load Output HEAT 4"
     id: "${devicename}_load_output_heat4"
     register_type: holding
     address: 0x81
@@ -1446,7 +1446,7 @@ binary_sensor:
   # Bit: 11
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Load Output Solar Water Pump"
+    name: "129 ${entity_prefix} Load Output Solar Water Pump"
     id: "${devicename}_load_output_solar_water_pump"
     register_type: holding
     address: 0x81
@@ -1454,7 +1454,7 @@ binary_sensor:
   # Bit: 12
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Load Output ALARM"
+    name: "129 ${entity_prefix} Load Output ALARM"
     id: "${devicename}_load_output_alarm"
     register_type: holding
     entity_category: diagnostic
@@ -1463,7 +1463,7 @@ binary_sensor:
   # Bit: 13
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Load Output RUN"
+    name: "129 ${entity_prefix} Load Output RUN"
     id: "${devicename}_load_output_run"
     register_type: holding
     address: 0x81
@@ -1471,7 +1471,7 @@ binary_sensor:
   # Bit: 14
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Load Output Auxiliary Heat Source"
+    name: "129 ${entity_prefix} Load Output Auxiliary Heat Source"
     id: "${devicename}_load_output_auxiliary_heat_source"
     register_type: holding
     address: 0x81
@@ -1479,7 +1479,7 @@ binary_sensor:
   # Bit: 15
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Load Output DEFROST"
+    name: "129 ${entity_prefix} Load Output DEFROST"
     id: "${devicename}_load_output_defrost"
     register_type: holding
     address: 0x81
@@ -1490,7 +1490,7 @@ binary_sensor:
   # Bit: 0
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Slave Unit Online Status: Reserved BIT 0"
+    name: "142 ${entity_prefix} Slave Unit Online Status: Reserved BIT 0"
     id: "${devicename}_slave_unit_online_status_reserved_bit_0"
     register_type: holding
     address: 0x8e
@@ -1498,7 +1498,7 @@ binary_sensor:
   # Bit: 1
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Slave Unit 1 Online Status"
+    name: "142 ${entity_prefix} Slave Unit 1 Online Status"
     id: "${devicename}_slave_unit_1_online_status"
     register_type: holding
     address: 0x8e
@@ -1506,7 +1506,7 @@ binary_sensor:
   # Bit: 2
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Slave Unit 2 Online Status"
+    name: "142 ${entity_prefix} Slave Unit 2 Online Status"
     id: "${devicename}_slave_unit_2_online_status"
     register_type: holding
     address: 0x8e
@@ -1514,7 +1514,7 @@ binary_sensor:
   # Bit: 3
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Slave Unit 3 Online Status"
+    name: "142 ${entity_prefix} Slave Unit 3 Online Status"
     id: "${devicename}_slave_unit_3_online_status"
     register_type: holding
     address: 0x8e
@@ -1522,7 +1522,7 @@ binary_sensor:
   # Bit: 4
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Slave Unit 4 Online Status"
+    name: "142 ${entity_prefix} Slave Unit 4 Online Status"
     id: "${devicename}_slave_unit_4_online_status"
     register_type: holding
     address: 0x8e
@@ -1530,7 +1530,7 @@ binary_sensor:
   # Bit: 5
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Slave Unit 5 Online Status"
+    name: "142 ${entity_prefix} Slave Unit 5 Online Status"
     id: "${devicename}_slave_unit_5_online_status"
     register_type: holding
     address: 0x8e
@@ -1538,7 +1538,7 @@ binary_sensor:
   # Bit: 6
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Slave Unit 6 Online Status"
+    name: "142 ${entity_prefix} Slave Unit 6 Online Status"
     id: "${devicename}_slave_unit_6_online_status"
     register_type: holding
     address: 0x8e
@@ -1546,7 +1546,7 @@ binary_sensor:
   # Bit: 7
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Slave Unit 7 Online Status"
+    name: "142 ${entity_prefix} Slave Unit 7 Online Status"
     id: "${devicename}_slave_unit_7_online_status"
     register_type: holding
     address: 0x8e
@@ -1554,7 +1554,7 @@ binary_sensor:
   # Bit: 8
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Slave Unit 8 Online Status"
+    name: "142 ${entity_prefix} Slave Unit 8 Online Status"
     id: "${devicename}_slave_unit_8_online_status"
     register_type: holding
     address: 0x8e
@@ -1562,7 +1562,7 @@ binary_sensor:
   # Bit: 9
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Slave Unit 9 Online Status"
+    name: "142 ${entity_prefix} Slave Unit 9 Online Status"
     id: "${devicename}_slave_unit_9_online_status"
     register_type: holding
     address: 0x8e
@@ -1570,7 +1570,7 @@ binary_sensor:
   # Bit: 10
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Slave Unit 10 Online Status"
+    name: "142 ${entity_prefix} Slave Unit 10 Online Status"
     id: "${devicename}_slave_unit_10_online_status"
     register_type: holding
     address: 0x8e
@@ -1578,7 +1578,7 @@ binary_sensor:
   # Bit: 11
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Slave Unit 11 Online Status"
+    name: "142 ${entity_prefix} Slave Unit 11 Online Status"
     id: "${devicename}_slave_unit_11_online_status"
     register_type: holding
     address: 0x8e
@@ -1586,7 +1586,7 @@ binary_sensor:
   # Bit: 12
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Slave Unit 12 Online Status"
+    name: "142 ${entity_prefix} Slave Unit 12 Online Status"
     id: "${devicename}_slave_unit_12_online_status"
     register_type: holding
     address: 0x8e
@@ -1594,7 +1594,7 @@ binary_sensor:
   # Bit: 13
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Slave Unit 13 Online Status"
+    name: "142 ${entity_prefix} Slave Unit 13 Online Status"
     id: "${devicename}_slave_unit_13_online_status"
     register_type: holding
     address: 0x8e
@@ -1602,7 +1602,7 @@ binary_sensor:
   # Bit: 14
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Slave Unit 14 Online Status"
+    name: "142 ${entity_prefix} Slave Unit 14 Online Status"
     id: "${devicename}_slave_unit_14_online_status"
     register_type: holding
     address: 0x8e
@@ -1610,7 +1610,7 @@ binary_sensor:
   # Bit: 15
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Slave Unit 15 Online Status"
+    name: "142 ${entity_prefix} Slave Unit 15 Online Status"
     id: "${devicename}_slave_unit_15_online_status"
     register_type: holding
     address: 0x8e
@@ -1620,7 +1620,7 @@ binary_sensor:
   # Bit: 0
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Parameter Setting 1 Heating And Cooling First Or Water First"
+    name: "210 ${entity_prefix} Parameter Setting 1 Heating And Cooling First Or Water First"
     id: "${devicename}_parameter_setting_1_heating_and_cooling_first_or_water_first"
     register_type: holding
     address: 0xd2
@@ -1628,7 +1628,7 @@ binary_sensor:
   # Bit: 1, default: false, TODO: verify default
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Parameter Setting 1 Dual Room Thermostat Supported"
+    name: "210 ${entity_prefix} Parameter Setting 1 Dual Room Thermostat Supported"
     id: "${devicename}_parameter_setting_1_dual_room_thermostat_supported"
     register_type: holding
     address: 0xd2
@@ -1636,7 +1636,7 @@ binary_sensor:
   # Bit: 2, default: false, TODO: verify default
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Parameter Setting 1 Room Thermostat"
+    name: "210 ${entity_prefix} Parameter Setting 1 Room Thermostat"
     id: "${devicename}_parameter_setting_1_room_thermostat"
     register_type: holding
     address: 0xd2
@@ -1644,7 +1644,7 @@ binary_sensor:
   # Bit: 3, default: true, TODO: verify default
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Parameter Setting 1 Supports Room Thermostat"
+    name: "210 ${entity_prefix} Parameter Setting 1 Supports Room Thermostat"
     id: "${devicename}_parameter_setting_1_supports_room_thermostat"
     register_type: holding
     address: 0xd2
@@ -1652,7 +1652,7 @@ binary_sensor:
   # Bit: 4, default: false, TODO: verify default
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Parameter Setting 1 Supports Room Temperature Sensor Ta"
+    name: "210 ${entity_prefix} Parameter Setting 1 Supports Room Temperature Sensor Ta"
     id: "${devicename}_parameter_setting_1_supports_room_temperature_sensor_ta"
     register_type: holding
     address: 0xd2
@@ -1661,7 +1661,7 @@ binary_sensor:
   # Midea: PUMPI silent mode, 1; valid, 0: invalid
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Parameter Setting 1 Supports T1 Sensor"
+    name: "210 ${entity_prefix} Parameter Setting 1 Supports T1 Sensor"
     id: "${devicename}_parameter_setting_1_supports_t1_sensor"
     register_type: holding
     address: 0xd2
@@ -1669,7 +1669,7 @@ binary_sensor:
   # Bit: 6, default: false, TODO: verify default
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Parameter Setting 1 T1S Heating High Low Temperature Settings"
+    name: "210 ${entity_prefix} Parameter Setting 1 T1S Heating High Low Temperature Settings"
     id: "${devicename}_parameter_setting_1_t1s_heating_high_low_temperature_settings"
     register_type: holding
     address: 0xd2
@@ -1677,7 +1677,7 @@ binary_sensor:
   # Bit: 7, default: true, TODO: verify default
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Parameter Setting 1 Enable Heating"
+    name: "210 ${entity_prefix} Parameter Setting 1 Enable Heating"
     id: "${devicename}_parameter_setting_1_enable_heating"
     register_type: holding
     address: 0xd2
@@ -1685,7 +1685,7 @@ binary_sensor:
   # Bit: 8, default: false, TODO: verify default
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Parameter Setting 1 T1s Cooling High Low Temperature Settings"
+    name: "210 ${entity_prefix} Parameter Setting 1 T1s Cooling High Low Temperature Settings"
     id: "${devicename}_parameter_setting_1_t1s_cooling_high_low_temperature_settings"
     register_type: holding
     address: 0xd2
@@ -1693,7 +1693,7 @@ binary_sensor:
   # Bit: 9, default: true, TODO: verify default
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Parameter Setting 1 Enable Cooling"
+    name: "210 ${entity_prefix} Parameter Setting 1 Enable Cooling"
     id: "${devicename}_parameter_setting_1_enable_cooling"
     register_type: holding
     address: 0xd2
@@ -1701,7 +1701,7 @@ binary_sensor:
   # Bit: 10, default: false, TODO: verify default
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Parameter Setting 1 DHW Pump Supports Pipe Disinfect"
+    name: "210 ${entity_prefix} Parameter Setting 1 DHW Pump Supports Pipe Disinfect"
     id: "${devicename}_parameter_setting_1_dhw_pump_supports_pipe_disinfect"
     register_type: holding
     address: 0xd2
@@ -1709,7 +1709,7 @@ binary_sensor:
   # Bit: 11, default: false, TODO: verify default
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Parameter Setting 1 Reserved BIT 11"
+    name: "210 ${entity_prefix} Parameter Setting 1 Reserved BIT 11"
     id: "${devicename}_parameter_setting_1_reserved_bit_11"
     register_type: holding
     address: 0xd2
@@ -1717,7 +1717,7 @@ binary_sensor:
   # Bit: 12, default: false, TODO: verify default
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Parameter Setting 1 DHW Pump Supported"
+    name: "210 ${entity_prefix} Parameter Setting 1 DHW Pump Supported"
     id: "${devicename}_parameter_setting_1_dhw_pump_supported"
     register_type: holding
     address: 0xd2
@@ -1725,7 +1725,7 @@ binary_sensor:
   # Bit: 13, default: true, TODO: verify default
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Parameter Setting 1 Supports Disinfection"
+    name: "210 ${entity_prefix} Parameter Setting 1 Supports Disinfection"
     id: "${devicename}_parameter_setting_1_supports_disinfection"
     register_type: holding
     address: 0xd2
@@ -1733,7 +1733,7 @@ binary_sensor:
   # Bit: 14, default: true, TODO: verify default
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Parameter Setting 1 Supports Water Tank Electric Heater TBH"
+    name: "210 ${entity_prefix} Parameter Setting 1 Supports Water Tank Electric Heater TBH"
     id: "${devicename}_parameter_setting_1_supports_water_tank_electric_heater_tbh"
     register_type: holding
     address: 0xd2
@@ -1741,7 +1741,7 @@ binary_sensor:
   # Bit: 15, default: true, TODO: verify default
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Parameter Setting 1 Enable Water Heating"
+    name: "210 ${entity_prefix} Parameter Setting 1 Enable Water Heating"
     id: "${devicename}_parameter_setting_1_enable_water_heating"
     register_type: holding
     address: 0xd2
@@ -1751,7 +1751,7 @@ binary_sensor:
   # Bit: 0, default: false, TODO: verify default
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Parameter Setting 2 IBH AHS Installation Position"
+    name: "211 ${entity_prefix} Parameter Setting 2 IBH AHS Installation Position"
     id: "${devicename}_parameter_setting_2_ibh_ahs_installation_position"
     register_type: holding
     address: 0xd3
@@ -1759,7 +1759,7 @@ binary_sensor:
   # Bit: 1, default: false, TODO: verify default
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Parameter Setting 2 Tbt Sensor Enable"
+    name: "211 ${entity_prefix} Parameter Setting 2 Tbt Sensor Enable"
     id: "${devicename}_parameter_setting_2_tbt_sensor_enable"
     register_type: holding
     address: 0xd3
@@ -1767,7 +1767,7 @@ binary_sensor:
   # Bit: 2, default: false, TODO: verify default
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Parameter Setting 2 Ta Sensor Position"
+    name: "211 ${entity_prefix} Parameter Setting 2 Ta Sensor Position"
     id: "${devicename}_parameter_setting_2_ta_sensor_position"
     register_type: holding
     address: 0xd3
@@ -1775,7 +1775,7 @@ binary_sensor:
   # Bit: 3, default: false, TODO: verify default
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Parameter Setting 2 Double Zone Setting Is Valid"
+    name: "211 ${entity_prefix} Parameter Setting 2 Double Zone Setting Is Valid"
     id: "${devicename}_parameter_setting_2_double_zone_setting_is_valid"
     register_type: holding
     address: 0xd3
@@ -1783,7 +1783,7 @@ binary_sensor:
   # Bit: 4, default: false, TODO: verify default
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Parameter Setting 2 Setting The High Low Temperature Of Heating Mode T1S"
+    name: "211 ${entity_prefix} Parameter Setting 2 Setting The High Low Temperature Of Heating Mode T1S"
     id: "${devicename}_parameter_setting_2_setting_the_high_low_temperature_of_heating_mode_t1s"
     register_type: holding
     address: 0xd3
@@ -1791,7 +1791,7 @@ binary_sensor:
   # Bit: 5, default: false, TODO: verify default
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Parameter Setting 2 Setting The High Low Temperature Of Cooling Mode T1S"
+    name: "211 ${entity_prefix} Parameter Setting 2 Setting The High Low Temperature Of Cooling Mode T1S"
     id: "${devicename}_parameter_setting_2_setting_the_high_low_temperature_of_cooling_mode_t1s"
     register_type: holding
     address: 0xd3
@@ -1800,7 +1800,7 @@ binary_sensor:
   # Midea: T1B sensor enable
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Parameter Setting 2 Tw2 Enabled"
+    name: "211 ${entity_prefix} Parameter Setting 2 Tw2 Enabled"
     id: "${devicename}_parameter_setting_2_tw2_enabled"
     register_type: holding
     address: 0xd3
@@ -1808,7 +1808,7 @@ binary_sensor:
   # Bit: 7, default: false, TODO: verify default
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Parameter Setting 2 Smart Grid"
+    name: "211 ${entity_prefix} Parameter Setting 2 Smart Grid"
     id: "${devicename}_parameter_setting_2_smart_grid"
     register_type: holding
     address: 0xd3
@@ -1816,7 +1816,7 @@ binary_sensor:
   # Bit: 8, default: false, TODO: verify default
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Parameter Setting 2 Port Definition"
+    name: "211 ${entity_prefix} Parameter Setting 2 Port Definition"
     id: "${devicename}_parameter_setting_2_port_definition"
     register_type: holding
     address: 0xd3
@@ -1824,7 +1824,7 @@ binary_sensor:
   # Bit: 9, default: false, TODO: verify default
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Parameter Setting 2 Solar Energy Kit Enable"
+    name: "211 ${entity_prefix} Parameter Setting 2 Solar Energy Kit Enable"
     id: "${devicename}_parameter_setting_2_solar_energy_kit_enable"
     register_type: holding
     address: 0xd3
@@ -1832,7 +1832,7 @@ binary_sensor:
   # Bit: 10, default: false, TODO: verify default
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Parameter Setting 2 Solar Energy Input Port"
+    name: "211 ${entity_prefix} Parameter Setting 2 Solar Energy Input Port"
     id: "${devicename}_parameter_setting_2_solar_energy_input_port"
     register_type: holding
     address: 0xd3
@@ -1840,7 +1840,7 @@ binary_sensor:
   # Bit: 11, default: false, TODO: verify default
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Parameter Setting 2 Piping Length Selection"
+    name: "211 ${entity_prefix} Parameter Setting 2 Piping Length Selection"
     id: "${devicename}_parameter_setting_2_piping_length_selection"
     register_type: holding
     address: 0xd3
@@ -1848,7 +1848,7 @@ binary_sensor:
   # Bit: 12, default: false, TODO: verify default
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Parameter Setting 2 Tbt2 Sensor Is Valid"
+    name: "211 ${entity_prefix} Parameter Setting 2 Tbt2 Sensor Is Valid"
     id: "${devicename}_parameter_setting_2_tbt2_sensor_is_valid"
     register_type: holding
     address: 0xd3
@@ -1856,7 +1856,7 @@ binary_sensor:
   # Bit: 13, default: false, TODO: verify default
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Parameter Setting 2 Enable Temperature Collection Kit"
+    name: "211 ${entity_prefix} Parameter Setting 2 Enable Temperature Collection Kit"
     id: "${devicename}_parameter_setting_2_enable_temperature_collection_kit"
     register_type: holding
     address: 0xd3
@@ -1864,7 +1864,7 @@ binary_sensor:
   # Bit: 14, default: false, TODO: verify default
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Parameter Setting 2 M1M2 Is Used For AHS Control"
+    name: "211 ${entity_prefix} Parameter Setting 2 M1M2 Is Used For AHS Control"
     id: "${devicename}_parameter_setting_2_m1m2_is_used_for_ahs_control"
     register_type: holding
     address: 0xd3
@@ -1872,7 +1872,7 @@ binary_sensor:
   # Bit: 15, default: false, TODO: verify default
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Parameter Setting 2 Reserved BIT 15"
+    name: "211 ${entity_prefix} Parameter Setting 2 Reserved BIT 15"
     id: "${devicename}_parameter_setting_2_reserved_bit_15"
     register_type: holding
     address: 0xd3
@@ -1900,7 +1900,7 @@ switch:
   # Register: 0 -> Bit 2
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Power DHW T5S"
+    name: "000 ${entity_prefix} Power DHW T5S"
     id: "${devicename}_power_dhw_t5s"
     register_type: holding
     entity_category: config
@@ -1909,7 +1909,7 @@ switch:
   # Register: 5 -> Bit 12
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Weather Compensation Zone 1"
+    name: "005 ${entity_prefix} Weather Compensation Zone 1"
     id: "${devicename}_weather_compensation_zone_1"
     register_type: holding
     entity_category: config
@@ -1918,7 +1918,7 @@ switch:
   # Register: 5 -> Bit 13
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Weather Compensation Zone 2"
+    name: "005 ${entity_prefix} Weather Compensation Zone 2"
     id: "${devicename}_weather_compensation_zone_2"
     register_type: holding
     entity_category: config
@@ -1928,7 +1928,7 @@ switch:
   # Register: 7
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Forced Water Tank Heating On/Off"
+    name: "007 ${entity_prefix} Forced Water Tank Heating On/Off"
     id: "${devicename}_forced_water_tank_heating_on_off"
     icon: mdi:fire-alert
     address: 0x7
@@ -1954,7 +1954,7 @@ number:
   # Register: 2 (Zone 1, Low)
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Set Water Temperature T1S Zone 1"
+    name: "002 ${entity_prefix} Set Water Temperature T1S Zone 1"
     id: "${devicename}_set_water_temperature_t1s_zone_1"
     register_type: holding
     address: 0x2
@@ -1997,7 +1997,7 @@ number:
   # Register: 2 (Zone 2, High)
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Set Water Temperature T1S Zone 2"
+    name: "002 ${entity_prefix} Set Water Temperature T1S Zone 2"
     id: "${devicename}_set_water_temperature_t1s_zone_2"
     register_type: holding
     address: 0x2
@@ -2033,7 +2033,7 @@ number:
   # Register: 4
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Set DHW Tank Temperature T5s"
+    name: "004 ${entity_prefix} Set DHW Tank Temperature T5s"
     id: "${devicename}_set_dhw_tank_temperature_t5s"
     register_type: holding
     address: 0x4
@@ -2047,7 +2047,7 @@ number:
   # Register: 6 (Zone 1, Low)
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Weather Compensation Curve Zone 1"
+    name: "006 ${entity_prefix} Weather Compensation Curve Zone 1"
     id: "${devicename}_weather_compensation_curve_zone_1"
     register_type: holding
     address: 0x6
@@ -2088,7 +2088,7 @@ number:
   # Register: 6 (Zone 2, High)
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Weather Compensation Curve Zone 2"
+    name: "006 ${entity_prefix} Weather Compensation Curve Zone 2"
     id: "${devicename}_weather_compensation_curve_zone_2"
     register_type: holding
     address: 0x6
@@ -2122,7 +2122,7 @@ number:
   # Register: 209, default: 5
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} DHW Pump Return Running Time"
+    name: "209 ${entity_prefix} DHW Pump Return Running Time"
     id: "${devicename}_dhw_pump_return_running_time"
     register_type: holding
     address: 0xd1
@@ -2134,7 +2134,7 @@ number:
   # Register: 212, default: 5
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} dT5_On"
+    name: "212 ${entity_prefix} dT5_On"
     id: "${devicename}_dt5_on"
     register_type: holding
     address: 0xd4
@@ -2146,7 +2146,7 @@ number:
   # Register: 213, default: 10
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} dT1S5"
+    name: "213 ${entity_prefix} dT1S5"
     id: "${devicename}_dt1s5"
     register_type: holding
     address: 0xd5
@@ -2158,7 +2158,7 @@ number:
   # Register: 214, default: 5
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} T Interval DHW"
+    name: "214 ${entity_prefix} T Interval DHW"
     id: "${devicename}_t_interval_dhw"
     register_type: holding
     address: 0xd6
@@ -2170,7 +2170,7 @@ number:
   # Register: 215, default: 43
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} T4 DHW max"
+    name: "215 ${entity_prefix} T4 DHW max"
     id: "${devicename}_t4_dhw_max"
     register_type: holding
     address: 0xd7
@@ -2182,7 +2182,7 @@ number:
   # Register: 216, default: -10
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} T4 DHW min"
+    name: "216 ${entity_prefix} T4 DHW min"
     id: "${devicename}_t4dhwmin"
     register_type: holding
     address: 0xd8
@@ -2194,7 +2194,7 @@ number:
   # Register: 217, default: 30
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} t TBH Delay"
+    name: "217 ${entity_prefix} t TBH Delay"
     id: "${devicename}_t_tbh_delay"
     register_type: holding
     address: 0xd9
@@ -2208,7 +2208,7 @@ number:
   # Also known as dT5S TBH Off (dt5s_tbh_off)
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} dT5 TBH Off"
+    name: "218 ${entity_prefix} dT5 TBH Off"
     id: "${devicename}_dt5_tbh_off"
     register_type: holding
     address: 0xda
@@ -2220,7 +2220,7 @@ number:
   # Register: 219, default: 5
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} T4 TBH On"
+    name: "219 ${entity_prefix} T4 TBH On"
     id: "${devicename}_t4_tbh_on"
     register_type: holding
     address: 0xdb
@@ -2232,7 +2232,7 @@ number:
   # Register: 220, default: 65
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Temperature For Disinfection Operation"
+    name: "220 ${entity_prefix} Temperature For Disinfection Operation"
     id: "${devicename}_t5s_di"
     register_type: holding
     address: 0xdc
@@ -2244,7 +2244,7 @@ number:
   # Register: 221, default: 210
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Maximum Disinfection Duration"
+    name: "221 ${entity_prefix} Maximum Disinfection Duration"
     id: "${devicename}_t_di_max"
     register_type: holding
     address: 0xdd
@@ -2256,7 +2256,7 @@ number:
   # Register: 222, default: 15
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Disinfection High Temperature Duration"
+    name: "222 ${entity_prefix} Disinfection High Temperature Duration"
     id: "${devicename}_t_di_hightemp"
     register_type: holding
     address: 0xde
@@ -2268,7 +2268,7 @@ number:
   # Register: 223, default: 5
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Time Interval Of Compressor Startup In Cooling mode"
+    name: "223 ${entity_prefix} Time Interval Of Compressor Startup In Cooling mode"
     id: "${devicename}_t_interval_c"
     register_type: holding
     address: 0xdf
@@ -2280,7 +2280,7 @@ number:
   # Register: 224, default: 5
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} dT1SC"
+    name: "224 ${entity_prefix} dT1SC"
     id: "${devicename}_dt1sc"
     register_type: holding
     address: 0xe0
@@ -2292,7 +2292,7 @@ number:
   # Register: 225, default: 2
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} dTSC"
+    name: "225 ${entity_prefix} dTSC"
     id: "${devicename}_dtsc"
     register_type: holding
     address: 0xe1
@@ -2304,7 +2304,7 @@ number:
   # Register: 226, default: 43
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} T4cmax"
+    name: "226 ${entity_prefix} T4cmax"
     id: "${devicename}_t4cmax"
     register_type: holding
     address: 0xe2
@@ -2316,7 +2316,7 @@ number:
   # Register: 227, default: 10
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} T4cmin"
+    name: "227 ${entity_prefix} T4cmin"
     id: "${devicename}_t4cmin"
     register_type: holding
     address: 0xe3
@@ -2328,7 +2328,7 @@ number:
   # Register: 228, default: 5
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Time Interval Of Compressor Startup In Heating mode"
+    name: "228 ${entity_prefix} Time Interval Of Compressor Startup In Heating mode"
     id: "${devicename}_t_interval_h"
     register_type: holding
     address: 0xe4
@@ -2340,7 +2340,7 @@ number:
   # Register: 229, default: 5
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} dT1SH"
+    name: "229 ${entity_prefix} dT1SH"
     id: "${devicename}_dt1sh"
     register_type: holding
     address: 0xe5
@@ -2352,7 +2352,7 @@ number:
   # Register: 230, default: 2
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} dTSH"
+    name: "230 ${entity_prefix} dTSH"
     id: "${devicename}_dtsh"
     register_type: holding
     address: 0xe6
@@ -2364,7 +2364,7 @@ number:
   # Register: 231, default: 25
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} T4hmax"
+    name: "231 ${entity_prefix} T4hmax"
     id: "${devicename}_t4hmax"
     register_type: holding
     address: 0xe7
@@ -2376,7 +2376,7 @@ number:
   # Register: 232, default: -15
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} T4hmin"
+    name: "232 ${entity_prefix} T4hmin"
     id: "${devicename}_t4hmin"
     register_type: holding
     address: 0xe8
@@ -2388,7 +2388,7 @@ number:
   # Register: 233, default: -5
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Ambient Temperature For Enabling Hydraulic Module Auxiliary Electric Heating IBH"
+    name: "233 ${entity_prefix} Ambient Temperature For Enabling Hydraulic Module Auxiliary Electric Heating IBH"
     id: "${devicename}_t4_ibh_on"
     register_type: holding
     address: 0xe9
@@ -2400,7 +2400,7 @@ number:
   # Register: 234, default: 5, TODO: verify min/max value
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Temperature Return Difference For Enabling The Hydraulic Module Auxiliary IBH"
+    name: "234 ${entity_prefix} Temperature Return Difference For Enabling The Hydraulic Module Auxiliary IBH"
     id: "${devicename}_dt1_ibh_on"
     register_type: holding
     address: 0xea
@@ -2412,7 +2412,7 @@ number:
   # Register: 235, default: 30
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Delay Time Of Enabling The Hydraulic Module Auxiliary Electric Heating IBH"
+    name: "235 ${entity_prefix} Delay Time Of Enabling The Hydraulic Module Auxiliary Electric Heating IBH"
     id: "${devicename}_t_ibh_delay"
     register_type: holding
     address: 0xeb
@@ -2424,7 +2424,7 @@ number:
   # Register: 237, default: 10, TODO: verify default
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Ambient Temperature Trigger For AHS"
+    name: "237 ${entity_prefix} Ambient Temperature Trigger For AHS"
     id: "${devicename}_t4_ahs_on"
     register_type: holding
     address: 0xed
@@ -2436,7 +2436,7 @@ number:
   # Register: 238, default: 5, TODO: verify max/max value
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Trigger Temperature Difference Between T1S And Current Heat for AHS"
+    name: "238 ${entity_prefix} Trigger Temperature Difference Between T1S And Current Heat for AHS"
     id: "${devicename}_dt1_ahs_on"
     register_type: holding
     address: 0xee
@@ -2448,7 +2448,7 @@ number:
   # Register: 240, default: 30
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Delay Time for Enabling AHS"
+    name: "240 ${entity_prefix} Delay Time for Enabling AHS"
     id: "${devicename}_t_ahs_delay"
     register_type: holding
     address: 0xf0
@@ -2460,7 +2460,7 @@ number:
   # Register: 241, default: 120
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Water Heating Max Duration"
+    name: "241 ${entity_prefix} Water Heating Max Duration"
     id: "${devicename}_t_dhwhp_max"
     register_type: holding
     address: 0xf1
@@ -2472,7 +2472,7 @@ number:
   # Register: 242, default: 30
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} T DHWHP Restrict"
+    name: "242 ${entity_prefix} T DHWHP Restrict"
     id: "${devicename}_t_dhwhp_restrict"
     register_type: holding
     address: 0xf2
@@ -2484,7 +2484,7 @@ number:
   # Register: 243, default: 25
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} T4autocmin"
+    name: "243 ${entity_prefix} T4autocmin"
     id: "${devicename}_t4autocmin"
     register_type: holding
     address: 0xf3
@@ -2496,7 +2496,7 @@ number:
   # Register: 244, default: 17
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} T4autohmax"
+    name: "244 ${entity_prefix} T4autohmax"
     id: "${devicename}_t4autohmax"
     register_type: holding
     address: 0xf4
@@ -2508,7 +2508,7 @@ number:
   # Register: 245, default: 25
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Heating Or Cooling Temperature When Holiday Mode Is Active"
+    name: "245 ${entity_prefix} Heating Or Cooling Temperature When Holiday Mode Is Active"
     id: "${devicename}_t1s_h_a_h"
     register_type: holding
     address: 0xf5
@@ -2520,7 +2520,7 @@ number:
   # Register: 246, default: 25
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Domestic Hot Water Temperature When Holiday Mode is Active"
+    name: "246 ${entity_prefix} Domestic Hot Water Temperature When Holiday Mode is Active"
     id: "${devicename}_t5s_h_a_dhw"
     register_type: holding
     address: 0xf6
@@ -2532,7 +2532,7 @@ number:
   # Register: 247, default: 10
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} PER START Ratio"
+    name: "247 ${entity_prefix} PER START Ratio"
     id: "${devicename}_per_start_ratio"
     register_type: holding
     address: 0xf7
@@ -2544,7 +2544,7 @@ number:
   # Register: 248, default: 5
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} TIME ADJUST"
+    name: "248 ${entity_prefix} TIME ADJUST"
     id: "${devicename}_time_adjust"
     register_type: holding
     address: 0xf8
@@ -2555,7 +2555,7 @@ number:
   # Register: 249, default: 15
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} DTbt2"
+    name: "249 ${entity_prefix} DTbt2"
     id: "${devicename}_dtbt2"
     register_type: holding
     address: 0xf9
@@ -2566,7 +2566,7 @@ number:
   # Register: 250, default: 0
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} IBH1 Power"
+    name: "250 ${entity_prefix} IBH1 Power"
     id: "${devicename}_ibh1_power"
     register_type: holding
     address: 0xfa
@@ -2578,7 +2578,7 @@ number:
   # Register: 251, default: 0
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} IBH2 Power"
+    name: "251 ${entity_prefix} IBH2 Power"
     id: "${devicename}_ibh2_power"
     register_type: holding
     address: 0xfb
@@ -2590,7 +2590,7 @@ number:
   # Register: 252, default: 0
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} TBH Power"
+    name: "252 ${entity_prefix} TBH Power"
     id: "${devicename}_tbh_power"
     register_type: holding
     address: 0xfc
@@ -2602,7 +2602,7 @@ number:
   # Register: 255, default: 8
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Temperature Rise Day Number"
+    name: "255 ${entity_prefix} Temperature Rise Day Number"
     id: "${devicename}_t_dryup"
     register_type: holding
     address: 0xff
@@ -2613,7 +2613,7 @@ number:
   # Register: 256, default: 5
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Drying Day Number"
+    name: "256 ${entity_prefix} Drying Day Number"
     id: "${devicename}_t_highpeak"
     register_type: holding
     address: 0x100
@@ -2624,7 +2624,7 @@ number:
   # Register: 257, default: 5
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Temperature Drop Day Number"
+    name: "257 ${entity_prefix} Temperature Drop Day Number"
     id: "${devicename}_t_dryd"
     register_type: holding
     address: 0x101
@@ -2635,7 +2635,7 @@ number:
   # Register: 258, default: 45
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Highest Drying Temperature"
+    name: "258 ${entity_prefix} Highest Drying Temperature"
     id: "${devicename}_t_drypeak"
     register_type: holding
     address: 0x102
@@ -2647,7 +2647,7 @@ number:
   # Register: 259, default: 72
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Running Time Of Floor Heating For The First Time"
+    name: "259 ${entity_prefix} Running Time Of Floor Heating For The First Time"
     id: "${devicename}_t_firstfh"
     register_type: holding
     address: 0x103
@@ -2659,7 +2659,7 @@ number:
   # Register: 260, default: 25
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} T1S Of Floor Heating For The First Time"
+    name: "260 ${entity_prefix} T1S Of Floor Heating For The First Time"
     id: "${devicename}_t1s_firstfh"
     register_type: holding
     address: 0x104
@@ -2671,7 +2671,7 @@ number:
   # Register: 261, default: 10
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} T1SetC1"
+    name: "261 ${entity_prefix} T1SetC1"
     id: "${devicename}_t1setc1"
     register_type: holding
     address: 0x105
@@ -2683,7 +2683,7 @@ number:
   # Register: 262, default: 16
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} T1SetC2"
+    name: "262 ${entity_prefix} T1SetC2"
     id: "${devicename}_t1setc2"
     register_type: holding
     address: 0x106
@@ -2695,7 +2695,7 @@ number:
   # Register: 263, default: 35
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} T4C1"
+    name: "263 ${entity_prefix} T4C1"
     id: "${devicename}_t4c1"
     register_type: holding
     address: 0x107
@@ -2707,7 +2707,7 @@ number:
   # Register: 264, default: 25
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} T4C2"
+    name: "264 ${entity_prefix} T4C2"
     id: "${devicename}_t4c2"
     register_type: holding
     address: 0x108
@@ -2719,7 +2719,7 @@ number:
   # Register: 265, default: 35
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} T1SetH1"
+    name: "265 ${entity_prefix} T1SetH1"
     id: "${devicename}_t1seth1"
     register_type: holding
     address: 0x109
@@ -2731,7 +2731,7 @@ number:
   # Register: 266, default: 28
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} T1SetH2"
+    name: "266 ${entity_prefix} T1SetH2"
     id: "${devicename}_t1seth2"
     register_type: holding
     address: 0x10a
@@ -2743,7 +2743,7 @@ number:
   # Register: 267, default: -5
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} T4H1"
+    name: "267 ${entity_prefix} T4H1"
     id: "${devicename}_t4h1"
     register_type: holding
     address: 0x10b
@@ -2755,7 +2755,7 @@ number:
   # Register: 268, default: 7
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} T4H2"
+    name: "268 ${entity_prefix} T4H2"
     id: "${devicename}_t4h2"
     register_type: holding
     address: 0x10c
@@ -2767,7 +2767,7 @@ number:
   # Register: 270 (Low, heating), default: 0.5
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} t_T4 FRESH_H"
+    name: "270 ${entity_prefix} t_T4 FRESH_H"
     id: "${devicename}_t_t4_fresh_h"
     register_type: holding
     address: 0x10e
@@ -2816,7 +2816,7 @@ number:
   # Register: 270 (High, cooling), default: 0.5
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} t_T4 FRESH_C"
+    name: "270 ${entity_prefix} t_T4 FRESH_C"
     id: "${devicename}_t_t4_fresh_c"
     register_type: holding
     address: 0x10e
@@ -2860,7 +2860,7 @@ number:
   # In modbus register this is called T_PUMPI_DELAY, in the menu this is called t_DELAY_PUMP
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "${entity_prefix} Built-in Circulating Pump Delay"
+    name: "271 ${entity_prefix} Built-in Circulating Pump Delay"
     id: "${devicename}_t_delay_pump"
     register_type: holding
     address: 0x10f

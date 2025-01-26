@@ -1,3 +1,5 @@
+YAML File Modifier
+heatpump (1).yaml Process File
 substitutions:
   devicename: heatpump
   description: Heatpump Controller
@@ -95,7 +97,7 @@ select:
   # Register: 1
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Operational Mode"
+    name: "001 Operational Mode"
     id: "${devicename}_operational_mode"
     icon: "mdi:fan"
     address: 0x1
@@ -108,7 +110,7 @@ select:
   # Register: 269, default: 0
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Power Input Limitation Type"
+    name: "269 Power Input Limitation Type"
     id: "${devicename}_power_input_limitation_type"
     icon: mdi:state-machine
     address: 0x10d
@@ -127,7 +129,7 @@ select:
   # Register: 272 (bits 0-3), default: 1
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Zone 1 End Heating Mode Emission Type"
+    name: "272 Zone 1 End Heating Mode Emission Type"
     id: "${devicename}_zone_1_end_heating_mode_emission_type"
     icon: mdi:heat-wave
     address: 0x110
@@ -175,7 +177,7 @@ select:
   # Register: 272 (bits 4-7), default: 2
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Zone 2 End Heating Mode Emission Type"
+    name: "272 Zone 2 End Heating Mode Emission Type"
     id: "${devicename}_zone_2_end_heating_mode_emission_type"
     icon: mdi:heat-wave
     address: 0x110
@@ -222,7 +224,7 @@ select:
   # Register: 272 (bits 8-11), default: 0
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Zone 1 End Cooling Mode Emission Type"
+    name: "272 Zone 1 End Cooling Mode Emission Type"
     id: "${devicename}_zone_1_end_cooling_mode_emission_type"
     icon: mdi:heat-wave
     address: 0x110
@@ -269,7 +271,7 @@ select:
   # Register: 272 (bits 12-15), default: 0
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Zone 2 End Cooling Mode Emission Type"
+    name: "272 Zone 2 End Cooling Mode Emission Type"
     id: "${devicename}_zone_2_end_cooling_mode_emission_type"
     icon: mdi:heat-wave
     address: 0x110
@@ -333,7 +335,7 @@ sensor:
   # Register: 0 -> Config is present as select, but now we need get value from heatpump and save it as global var
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Register 0 switches"
+    name: "000 Register 0 switches"
     id: "${devicename}_register_0_switches"
     internal: true
     register_type: holding
@@ -351,7 +353,7 @@ sensor:
   # Register: 5 -> Config is present as select, but now we need get value from heatpump and save it as global var
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Register 5 switches"
+    name: "005 Register 5 switches"
     id: "${devicename}_register_5_switches"
     internal: true
     register_type: holding
@@ -366,7 +368,7 @@ sensor:
   # Register: 7
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Forced Water Tank Heating"
+    name: "007 Forced Water Tank Heating"
     id: "${devicename}_forced_water_tank_heating"
     icon: mdi:fire-alert
     register_type: holding
@@ -375,7 +377,7 @@ sensor:
   # Register: 8
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Forced Tank Backup Heater"
+    name: "008 Forced Tank Backup Heater"
     id: "${devicename}_forced_tbh"
     icon: mdi:fire-alert
     register_type: holding
@@ -384,7 +386,7 @@ sensor:
   # Register: 9
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Forced Hydraulic Module Rear Electric Heater 1"
+    name: "009 Forced Hydraulic Module Rear Electric Heater 1"
     id: "${devicename}_forced_hydraulic_module_rear_electric_heater_1"
     icon: mdi:fire-alert
     register_type: holding
@@ -393,7 +395,7 @@ sensor:
   # Register: 10
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "t_SG_MAX"
+    name: "010 t_SG_MAX"
     id: "${devicename}_t_sg_max"
     icon: mdi:clock
     register_type: holding
@@ -404,7 +406,7 @@ sensor:
   # Register: 100
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Compressor Operating Frequency"
+    name: "100 Compressor Operating Frequency"
     id: "${devicename}_compressor_operating_frequency"
     icon: mdi:sine-wave
     register_type: holding
@@ -415,7 +417,7 @@ sensor:
   # Register: 102
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Fan Speed"
+    name: "102 Fan Speed"
     id: "${devicename}_fan_speed"
     icon: mdi:fan
     register_type: holding
@@ -425,7 +427,7 @@ sensor:
   # Register: 103
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "PMV Openness"
+    name: "103 PMV Openness"
     id: "${devicename}_pmv_openness"
     icon: mdi:valve
     register_type: holding
@@ -440,7 +442,7 @@ sensor:
   # Register: 104
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Water Inlet Temperature"
+    name: "104 Water Inlet Temperature"
     id: "${devicename}_water_inlet_temperature"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -450,7 +452,7 @@ sensor:
   # Register: 105
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Water Outlet Temperature"
+    name: "105 Water Outlet Temperature"
     id: "${devicename}_water_outlet_temperature"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -460,7 +462,7 @@ sensor:
   # Register: 106
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Condensor Temperature T3"
+    name: "106 Condensor Temperature T3"
     id: "${devicename}_condensor_temperature_t3"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -470,7 +472,7 @@ sensor:
   # Register: 107
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Outdoor Ambient Temperature"
+    name: "107 Outdoor Ambient Temperature"
     id: "${devicename}_outdoor_ambient_temperature"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -480,7 +482,7 @@ sensor:
   # Register: 108
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Discharge Temperature"
+    name: "108 Discharge Temperature"
     id: "${devicename}_discharge_temperature"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -490,7 +492,7 @@ sensor:
   # Register: 109
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Return Air Temperature"
+    name: "109 Return Air Temperature"
     id: "${devicename}_return_air_temperature"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -500,7 +502,7 @@ sensor:
   # Register: 110
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Total Water Outlet Temperature T1"
+    name: "110 Total Water Outlet Temperature T1"
     id: "${devicename}_total_water_outlet_temperature_t1"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -510,7 +512,7 @@ sensor:
   # Register: 111
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "System Total Water Outlet Temperature T1B"
+    name: "111 System Total Water Outlet Temperature T1B"
     id: "${devicename}_system_total_water_outlet_temperature_t1b"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -520,7 +522,7 @@ sensor:
   # Register: 112
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Refrigerant Liquid Side Temperature T2"
+    name: "112 Refrigerant Liquid Side Temperature T2"
     id: "${devicename}_refrigerant_liquid_side_temperature_t2"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -530,7 +532,7 @@ sensor:
   # Register: 113
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Refrigerant Gas Side Temperature T2B"
+    name: "113 Refrigerant Gas Side Temperature T2B"
     id: "${devicename}_refrigerant_gas_side_temperature_t2b"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -540,7 +542,7 @@ sensor:
   # Register: 114
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Room Temperature Ta"
+    name: "114 Room Temperature Ta"
     id: "${devicename}_room_temperature_ta"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -550,7 +552,7 @@ sensor:
   # Register: 115
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Water Tank Temperature T5"
+    name: "115 Water Tank Temperature T5"
     id: "${devicename}_water_tank_temperature_t5"
     icon: mdi:thermometer-water
     register_type: holding
@@ -560,7 +562,7 @@ sensor:
   # Register: 116
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Outdoor Unit High Pressure"
+    name: "116 Outdoor Unit High Pressure"
     id: "${devicename}_outdoor_unit_high_pressure"
     icon: mdi:car-brake-worn-linings
     register_type: holding
@@ -570,7 +572,7 @@ sensor:
   # Register: 117
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: " Outdoor Unit Low Pressure"
+    name: "117  Outdoor Unit Low Pressure"
     id: "${devicename}_outdoor_unit_low_pressure"
     icon: mdi:car-brake-low-pressure
     register_type: holding
@@ -580,7 +582,7 @@ sensor:
   # Register: 118
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Outdoor Unit Current"
+    name: "118 Outdoor Unit Current"
     id: "${devicename}_outdoor_unit_current"
     icon: mdi:alpha-a
     register_type: holding
@@ -590,7 +592,7 @@ sensor:
   # Register: 119
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Outdoor Unit Voltage"
+    name: "119 Outdoor Unit Voltage"
     id: "${devicename}_outdoor_unit_voltage"
     icon: mdi:alpha-v
     register_type: holding
@@ -601,7 +603,7 @@ sensor:
   # Midea: Tbt1
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Hydraulic Module Current 1"
+    name: "120 Hydraulic Module Current 1"
     id: "${devicename}_hydraulic_module_current_1"
     icon: mdi:thermometer
     unit_of_measurement: "°C"
@@ -612,7 +614,7 @@ sensor:
   # Midea: Tbt2
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Hydraulic Module Current 2"
+    name: "121 Hydraulic Module Current 2"
     id: "${devicename}_hydraulic_module_current_2"
     icon: mdi:thermometer
     unit_of_measurement: "°C"
@@ -622,7 +624,7 @@ sensor:
   # Register: 122
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Compressor Operation Time"
+    name: "122 Compressor Operation Time"
     id: "${devicename}_compressor_operation_time"
     icon: mdi:av-timer
     register_type: holding
@@ -632,7 +634,7 @@ sensor:
   # Register: 123
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Unit Capacity"
+    name: "123 Unit Capacity"
     id: "${devicename}_unit_capacity"
     icon: mdi:lightning-bolt-circle
     register_type: holding
@@ -642,7 +644,7 @@ sensor:
   # Register: 124
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Current Fault"
+    name: "124 Current Fault"
     id: "${devicename}_current_fault"
     icon: mdi:alert-circle
     register_type: holding
@@ -652,7 +654,7 @@ sensor:
   # Register: 125
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Fault 1"
+    name: "125 Fault 1"
     id: "${devicename}_fault_1"
     icon: mdi:alert-circle
     register_type: holding
@@ -662,7 +664,7 @@ sensor:
   # Register: 126
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Fault 2"
+    name: "126 Fault 2"
     id: "${devicename}_fault_2"
     icon: mdi:alert-circle
     register_type: holding
@@ -672,7 +674,7 @@ sensor:
   # Register: 127
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Fault 3"
+    name: "127 Fault 3"
     id: "${devicename}_fault_3"
     icon: mdi:alert-circle
     register_type: holding
@@ -682,7 +684,7 @@ sensor:
   # Register: 130
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Software Version"
+    name: "130 Software Version"
     id: "${devicename}_software_version"
     icon: mdi:information
     register_type: holding
@@ -691,7 +693,7 @@ sensor:
   # Register: 131
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Wired Controller Version Number"
+    name: "131 Wired Controller Version Number"
     id: "${devicename}_wired_controller_version_number"
     icon: mdi:information
     register_type: holding
@@ -700,7 +702,7 @@ sensor:
   # Register: 132
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Compressor Target Frequency"
+    name: "132 Compressor Target Frequency"
     id: "${devicename}_compressor_target_frequency"
     icon: mdi:sine-wave
     register_type: holding
@@ -710,7 +712,7 @@ sensor:
   # Register: 133
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "DC Bus Current"
+    name: "133 DC Bus Current"
     id: "${devicename}_dc_bus_current"
     icon: mdi:alpha-a
     register_type: holding
@@ -720,7 +722,7 @@ sensor:
   # Register: 134
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "DC Bus Voltage"
+    name: "134 DC Bus Voltage"
     id: "${devicename}_dc_bus_voltage"
     icon: mdi:alpha-v
     register_type: holding
@@ -732,7 +734,7 @@ sensor:
   # Register: 135
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "TF module temperature"
+    name: "135 TF module temperature"
     id: "${devicename}_tf_module_temperature"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -742,7 +744,7 @@ sensor:
   # Register: 136
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Climate Curve T1S Calculated Value 1"
+    name: "136 Climate Curve T1S Calculated Value 1"
     id: "${devicename}_climate_curve_t1s_calculated_value_1"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -752,7 +754,7 @@ sensor:
   # Register: 137
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Climate Curve T1S Calculated Value 2"
+    name: "137 Climate Curve T1S Calculated Value 2"
     id: "${devicename}_climate_curve_t1s_calculated_value_2"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -762,7 +764,7 @@ sensor:
   # Register: 138
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Water Flow"
+    name: "138 Water Flow"
     id: "${devicename}_water_flow"
     icon: mdi:waves-arrow-right
     register_type: holding
@@ -775,7 +777,7 @@ sensor:
   # Register: 139
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Limit Scheme Of Outdoor Unit Current"
+    name: "139 Limit Scheme Of Outdoor Unit Current"
     id: "${devicename}_limit_scheme_of_outdoor_unit_current"
     icon: mdi:eye
     register_type: holding
@@ -785,7 +787,7 @@ sensor:
   # Register: 140
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Ability Of Hydraulic Module"
+    name: "140 Ability Of Hydraulic Module"
     id: "${devicename}_ability_of_hydraulic_module"
     icon: mdi:lightning-bolt
     register_type: holding
@@ -798,7 +800,7 @@ sensor:
   # Register: 141
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Tsolar"
+    name: "141 Tsolar"
     id: "${devicename}_tsolar"
     icon: mdi:thermometer
     register_type: holding
@@ -809,7 +811,7 @@ sensor:
   # U_DWORD combines this register with the next one
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Electricity Consumption"
+    name: "143 Electricity Consumption"
     id: "${devicename}_electricity_consumption"
     icon: mdi:lightning-bolt-outline
     register_type: holding
@@ -822,7 +824,7 @@ sensor:
   # U_DWORD combines this register with the next one
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Power Output"
+    name: "145 Power Output"
     id: "${devicename}_power_output"
     icon: mdi:lightning-bolt-outline
     register_type: holding
@@ -838,7 +840,7 @@ sensor:
   # Register: 201 (Low), default: 25, TODO: verify default
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Temperature Upper Limit Of T1S Cooling Zone 1"
+    name: "201 Temperature Upper Limit Of T1S Cooling Zone 1"
     id: "${devicename}_temperature_upper_limit_of_t1s_cooling_zone_1"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -849,7 +851,7 @@ sensor:
   # Register: 201 (High), default: 25, TODO: verify default
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Temperature Upper Limit Of T1S Cooling Zone 2"
+    name: "201 Temperature Upper Limit Of T1S Cooling Zone 2"
     id: "${devicename}_temperature_upper_limit_of_t1s_cooling_zone_2"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -860,7 +862,7 @@ sensor:
   # Register: 202 (Low), default: 5, TODO: verify default
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Temperature Lower Limit Of T1S Cooling Zone 1"
+    name: "202 Temperature Lower Limit Of T1S Cooling Zone 1"
     id: "${devicename}_temperature_lower_limit_of_t1s_cooling_zone_1"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -871,7 +873,7 @@ sensor:
   # Register: 202 (High), default: 5, TODO: verify default
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Temperature Lower Limit Of T1S Cooling Zone 2"
+    name: "202 Temperature Lower Limit Of T1S Cooling Zone 2"
     id: "${devicename}_temperature_lower_limit_of_t1s_cooling_zone_2"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -882,7 +884,7 @@ sensor:
   # Register: 203 (Low), default: 55, TODO: verify default
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Temperature Upper Limit Of T1S Heating Zone 1"
+    name: "203 Temperature Upper Limit Of T1S Heating Zone 1"
     id: "${devicename}_temperature_upper_limit_of_t1s_heating_zone_1"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -893,7 +895,7 @@ sensor:
   # Register: 203 (High), default: 55, TODO: verify default
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Temperature Upper Limit Of T1S Heating Zone 2"
+    name: "203 Temperature Upper Limit Of T1S Heating Zone 2"
     id: "${devicename}_temperature_upper_limit_of_t1s_heating_zone_2"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -904,7 +906,7 @@ sensor:
   # Register: 204 (Low), default: 25, TODO: verify default
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Temperature Lower Limit Of T1S Heating Zone 1"
+    name: "204 Temperature Lower Limit Of T1S Heating Zone 1"
     id: "${devicename}_temperature_lower_limit_of_t1s_heating_zone_1"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -915,7 +917,7 @@ sensor:
   # Register: 204 (High), default: 25, TODO: verify default
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Temperature Lower Limit Of T1S Heating Zone 2"
+    name: "204 Temperature Lower Limit Of T1S Heating Zone 2"
     id: "${devicename}_temperature_lower_limit_of_t1s_heating_zone_2"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -926,7 +928,7 @@ sensor:
   # Register: 205
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Temperature Upper Limit Of TS Setting"
+    name: "205 Temperature Upper Limit Of TS Setting"
     id: "${devicename}_temperature_upper_limit_of_ts_setting"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -938,7 +940,7 @@ sensor:
   # Register: 206
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Temperature Lower Limit Of TS Setting"
+    name: "206 Temperature Lower Limit Of TS Setting"
     id: "${devicename}_temperature_lower_limit_of_ts_setting"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -950,7 +952,7 @@ sensor:
   # Register: 207
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Temperature Upper Limit Of water Heating"
+    name: "207 Temperature Upper Limit Of water Heating"
     id: "${devicename}_temperature_upper_limit_of_water_heating"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -960,7 +962,7 @@ sensor:
   # Register: 208
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Temperature Lower Limit Of Water Heating"
+    name: "208 Temperature Lower Limit Of Water Heating"
     id: "${devicename}_temperature_lower_limit_of_water_heating"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -971,7 +973,7 @@ sensor:
   # Register: 210 -> Config is present as select, but now we need get value from heatpump and save it as global var
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Parameter Settings 1"
+    name: "210 Parameter Settings 1"
     id: "${devicename}_parameter_settings_1"
     icon: mdi:state-machine
     internal: true
@@ -985,7 +987,7 @@ sensor:
   # Register: 211 -> Config is present as select, but now we need get value from heatpump and save it as global var
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Parameter Settings 2"
+    name: "211 Parameter Settings 2"
     id: "${devicename}_parameter_settings_2"
     icon: mdi:state-machine
     internal: true
@@ -1038,7 +1040,7 @@ sensor:
   # Register: 253
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Comfort Parameter Reserved 3"
+    name: "253 Comfort Parameter Reserved 3"
     id: "${devicename}_comfort_parameter_3"
     icon: mdi:head-question-outline
     register_type: holding
@@ -1047,7 +1049,7 @@ sensor:
   # Register: 254
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Comfort Parameter Reserved 4"
+    name: "254 Comfort Parameter Reserved 4"
     id: "${devicename}_comfort_parameter_4"
     icon: mdi:head-question-outline
     register_type: holding
@@ -1074,7 +1076,7 @@ sensor:
 
   # Template sensor to get the T1S value for DHW (T1S=T5+dT1S5).
   - platform: template
-    name: "T1S DHW"
+    name: "272 T1S DHW"
     id: "${devicename}_t1s_dhw"
     icon: mdi:thermometer
     unit_of_measurement: "°C"
@@ -1114,7 +1116,7 @@ binary_sensor:
   # Bit: 4
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Power Reserved BIT 4"
+    name: "000 Power Reserved BIT 4"
     id: "${devicename}_power_reserved_bit_4"
     icon: mdi:head-question-outline
     register_type: holding
@@ -1223,7 +1225,7 @@ binary_sensor:
   # Register: 5 -> moved to switch without these marked as reserved_bit and one R/O
   # Bit: 0
   - platform: template
-    name: "Function Setting Reserved BIT 0"
+    name: "005 Function Setting Reserved BIT 0"
     id: "${devicename}_function_setting_reserved_bit_0"
     icon: mdi:head-question-outline
     lambda: "return (id(unmasked_value_register_5) & 0x01) == 0x01; // Return status bit1"
@@ -1277,7 +1279,7 @@ binary_sensor:
   # Bit: 0
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Status BIT 1 Reserved BIT 0"
+    name: "128 Status BIT 1 Reserved BIT 0"
     id: "${devicename}_status_bit_1_reserved_bit_0"
     icon: mdi:head-question-outline
     register_type: holding
@@ -1423,7 +1425,7 @@ binary_sensor:
   # Bit: 0
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Load Output Electric Heater IBH 1"
+    name: "129 Load Output Electric Heater IBH 1"
     id: "${devicename}_load_output_electric_heater_ibh1"
     icon: mdi:eye
     register_type: holding
@@ -1571,7 +1573,7 @@ binary_sensor:
   # Bit: 0
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Slave Unit Online Status: Reserved BIT 0"
+    name: "142 Slave Unit Online Status: Reserved BIT 0"
     id: "${devicename}_slave_unit_online_status_reserved_bit_0"
     icon: mdi:head-question-outline
     register_type: holding
@@ -1715,32 +1717,32 @@ binary_sensor:
 
   # Register: 210, Bit: 6, default: false, TODO: verify default
   - platform: template
-    name: "Parameter Setting 1 T1S Heating High Low Temperature Settings"
+    name: "210 Parameter Setting 1 T1S Heating High Low Temperature Settings"
     id: "${devicename}_parameter_setting_1_t1s_heating_high_low_temperature_settings"
     icon: mdi:eye
     lambda: "return (id(unmasked_value_register_210) & 0x40) == 0x40; // Return status bit6"
   # Register: 210, Bit: 8, default: false, TODO: verify default
   - platform: template
-    name: "Parameter Setting 1 T1s Cooling High Low Temperature Settings"
+    name: "210 Parameter Setting 1 T1s Cooling High Low Temperature Settings"
     id: "${devicename}_parameter_setting_1_t1s_cooling_high_low_temperature_settings"
     icon: mdi:eye
     lambda: "return (id(unmasked_value_register_210) & 0x100) == 0x100; // Return status bit8"
   # Register: 210, Bit: 11, default: false, TODO: verify default
   - platform: template
-    name: "Parameter Setting 1 Reserved BIT 11"
+    name: "210 Parameter Setting 1 Reserved BIT 11"
     id: "${devicename}_parameter_setting_1_reserved_bit_11"
     icon: mdi:head-question-outline
     lambda: "return (id(unmasked_value_register_210) & 0x800) == 0x800; // Return status bit11"
   # Register: 210, Bit: 14, default: false, TODO: verify default
   - platform: template
-    name: "Parameter Setting 1 Supports Water Tank Electric Heater TBH"
+    name: "210 Parameter Setting 1 Supports Water Tank Electric Heater TBH"
     id: "${devicename}_parameter_setting_1_supports_water_tank_electric_heater_tbh"
     icon: mdi:eye
     lambda: "return (id(unmasked_value_register_210) & 0x4000) == 0x4000; // Return status bit14"
     
   # Register: 211, Bit: 15, default: false, TODO: verify default
   - platform: template
-    name: "Parameter Setting 2 Reserved BIT 15"
+    name: "211 Parameter Setting 2 Reserved BIT 15"
     id: "${devicename}_parameter_setting_2_reserved_bit_15"
     icon: mdi:head-question-outline
     lambda: "return (id(unmasked_value_register_211) & 0x8000) == 0x8000; // Return status bit15"
@@ -1772,7 +1774,7 @@ switch:
   # When Room Temperature Control is enabled, the temperature sensor in the remote controller
   # will be used to define when the heatpump should be turned (powered) on or off
   - platform: template
-    name: "Room Temperature Control"
+    name: "000 Room Temperature Control"
     id: "${devicename}_room_temperature_control"
     icon: mdi:eye
     entity_category: config
@@ -1811,7 +1813,7 @@ switch:
   # If room thermostat is enabled, controlling this switch will be done by the heatpump. In other words,
   # the room thermostat will decide when this will be on or off.
   - platform: template
-    name: "Water Flow Temperature Control Zone 1"
+    name: "000 Water Flow Temperature Control Zone 1"
     id: "${devicename}_water_flow_temperature_control_zone_1"
     icon: mdi:eye
     entity_category: config
@@ -1846,7 +1848,7 @@ switch:
           }
   # Register: 0 -> Bit 2 DHW
   - platform: template
-    name: "Power DHW T5S"
+    name: "000 Power DHW T5S"
     id: "${devicename}_power_dhw_t5s"
     icon: mdi:eye
     entity_category: config
@@ -1886,7 +1888,7 @@ switch:
   # If room thermostat is enabled, controlling this switch will be done by the heatpump. In other words,
   # the room thermostat will decide when this will be on or off.
   - platform: template
-    name: "Water Flow Temperature Control Zone 2"
+    name: "000 Water Flow Temperature Control Zone 2"
     id: "${devicename}_water_flow_temperature_control_zone_2"
     icon: mdi:eye
     entity_category: config
@@ -1920,7 +1922,7 @@ switch:
           }
   # Register: 5 -> Bit: 4
   - platform: template
-    name: "Function Setting Disinfect"
+    name: "005 Function Setting Disinfect"
     id: "${devicename}_function_setting_disinfect"
     icon: mdi:eye
     entity_category: config
@@ -1955,7 +1957,7 @@ switch:
   # Register: 5 -> Bit: 5 Is present in this config as a 'binary_sensor'
   # Register: 5 -> Bit: 6
   - platform: template
-    name: "Function Setting Silent Mode"
+    name: "005 Function Setting Silent Mode"
     id: "${devicename}_function_setting_silent_mode"
     icon: mdi:eye
     entity_category: config
@@ -1987,7 +1989,7 @@ switch:
           }
   # Register: 5 -> Bit: 7
   - platform: template
-    name: "Function Setting Silent Mode Level"
+    name: "005 Function Setting Silent Mode Level"
     id: "${devicename}_function_setting_silent_mode_level"
     icon: mdi:eye
     entity_category: config
@@ -2019,7 +2021,7 @@ switch:
           }
   # Register: 5 -> Bit: 8
   - platform: template
-    name: "Function Setting Holiday Home"
+    name: "005 Function Setting Holiday Home"
     id: "${devicename}_function_setting_holiday_home"
     icon: mdi:eye
     entity_category: config
@@ -2052,7 +2054,7 @@ switch:
   # Register: 5 -> Bit: 9 Is present in this config as a 'binary_sensor'
   # Register: 5 -> Bit: 10
   - platform: template
-    name: "Function Setting ECO Mode"
+    name: "005 Function Setting ECO Mode"
     id: "${devicename}_function_setting_eco_mode"
     icon: mdi:eye
     entity_category: config
@@ -2084,7 +2086,7 @@ switch:
           }
   # Register: 5 -> Bit: 11
   - platform: template
-    name: "Function Setting DHW Pumps Running Constant Temperature Water Recycling"
+    name: "005 Function Setting DHW Pumps Running Constant Temperature Water Recycling"
     id: "${devicename}_function_setting_dhw_pumps_running_constant_temperature_water_recycling"
     icon: mdi:eye
     entity_category: config
@@ -2116,7 +2118,7 @@ switch:
           }
   # Register: 5 -> Bit 12
   - platform: template
-    name: "Weather Compensation Zone 1"
+    name: "005 Weather Compensation Zone 1"
     id: "${devicename}_weather_compensation_zone_1"
     icon: mdi:eye
     entity_category: config
@@ -2148,7 +2150,7 @@ switch:
           }
   # Register: 5 -> Bit 13
   - platform: template
-    name: "Weather Compensation Zone 2"
+    name: "005 Weather Compensation Zone 2"
     id: "${devicename}_weather_compensation_zone_2"
     icon: mdi:eye
     entity_category: config
@@ -2182,7 +2184,7 @@ switch:
   # Register: 7
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Forced Water Tank Heating On/Off"
+    name: "007 Forced Water Tank Heating On/Off"
     id: "${devicename}_forced_water_tank_heating_on_off"
     icon: mdi:fire-alert
     address: 0x7
@@ -2207,7 +2209,7 @@ switch:
   # Register: 210, default: true, TODO: verify default
   # Register: 210, Bit: 0
   - platform: template
-    name: "Parameter Setting 1 Heating And Cooling First Or Water First"
+    name: "210 Parameter Setting 1 Heating And Cooling First Or Water First"
     id: "${devicename}_parameter_setting_1_heating_and_cooling_first_or_water_first"
     icon: mdi:eye
     entity_category: config
@@ -2239,7 +2241,7 @@ switch:
           }
   # Register: 210, Bit: 1, default: false, TODO: verify default
   - platform: template
-    name: "Parameter Setting 1 Dual Room Thermostat Supported"
+    name: "210 Parameter Setting 1 Dual Room Thermostat Supported"
     id: "${devicename}_parameter_setting_1_dual_room_thermostat_supported"
     icon: mdi:eye
     restore_mode: DISABLED
@@ -2271,7 +2273,7 @@ switch:
           }
   # Register: 210, Bit: 2, default: false, TODO: verify default
   - platform: template
-    name: "Parameter Setting 1 Room Thermostat"
+    name: "210 Parameter Setting 1 Room Thermostat"
     id: "${devicename}_parameter_setting_1_room_thermostat"
     icon: mdi:eye
     restore_mode: DISABLED
@@ -2303,7 +2305,7 @@ switch:
           }
   # Register: 210, Bit: 3, default: true, TODO: verify default
   - platform: template
-    name: "Parameter Setting 1 Supports Room Thermostat"
+    name: "210 Parameter Setting 1 Supports Room Thermostat"
     id: "${devicename}_parameter_setting_1_supports_room_thermostat"
     icon: mdi:eye
     restore_mode: DISABLED
@@ -2335,7 +2337,7 @@ switch:
           }
   # Register: 210, Bit: 4, default: false, TODO: verify default
   - platform: template
-    name: "Parameter Setting 1 Supports Room Temperature Sensor Ta"
+    name: "210 Parameter Setting 1 Supports Room Temperature Sensor Ta"
     id: "${devicename}_parameter_setting_1_supports_room_temperature_sensor_ta"
     icon: mdi:eye
     restore_mode: DISABLED
@@ -2368,7 +2370,7 @@ switch:
   # Register: 210, Bit: 5, default: false, TODO: verify default
   # Midea, YORK: PUMPI silent mode, 1; valid, 0: invalid
   - platform: template
-    name: "Parameter Setting 1 Supports T1 Sensor"
+    name: "210 Parameter Setting 1 Supports T1 Sensor"
     id: "${devicename}_parameter_setting_1_supports_t1_sensor"
     icon: mdi:eye
     restore_mode: DISABLED
@@ -2401,7 +2403,7 @@ switch:
   # Register: 210, Bit: 6 is in binary_sensor
   # Register: 210, Bit: 7, default: true, TODO: verify default
   - platform: template
-    name: "Parameter Setting 1 Enable Heating"
+    name: "210 Parameter Setting 1 Enable Heating"
     id: "${devicename}_parameter_setting_1_enable_heating"
     icon: mdi:eye
     restore_mode: DISABLED
@@ -2434,7 +2436,7 @@ switch:
   # Register: 210, Bit: 8 is in binary_sensor
   # Register: 210, Bit: 9, default: true, TODO: verify default
   - platform: template
-    name: "Parameter Setting 1 Enable Cooling"
+    name: "210 Parameter Setting 1 Enable Cooling"
     id: "${devicename}_parameter_setting_1_enable_cooling"
     icon: mdi:eye
     restore_mode: DISABLED
@@ -2466,7 +2468,7 @@ switch:
           }
   # Register: 210, Bit: 10, default: false, TODO: verify default
   - platform: template
-    name: "Parameter Setting 1 DHW Pump Supports Pipe Disinfect"
+    name: "210 Parameter Setting 1 DHW Pump Supports Pipe Disinfect"
     id: "${devicename}_parameter_setting_1_dhw_pump_supports_pipe_disinfect"
     icon: mdi:eye
     restore_mode: DISABLED
@@ -2499,7 +2501,7 @@ switch:
   # Register: 210, Bit: 11 is in binary_sensor
   # Register: 210, Bit: 12, default: false, TODO: verify default
   - platform: template
-    name: "Parameter Setting 1 DHW Pump Supported"
+    name: "210 Parameter Setting 1 DHW Pump Supported"
     id: "${devicename}_parameter_setting_1_dhw_pump_supported"
     icon: mdi:eye
     restore_mode: DISABLED
@@ -2531,7 +2533,7 @@ switch:
           }
   # Register: 210, Bit: 13, default: true, TODO: verify default
   - platform: template
-    name: "Parameter Setting 1 Supports Disinfection"
+    name: "210 Parameter Setting 1 Supports Disinfection"
     id: "${devicename}_parameter_setting_1_supports_disinfection"
     icon: mdi:eye
     restore_mode: DISABLED
@@ -2564,7 +2566,7 @@ switch:
   # Register: 210, Bit: 14 is in binary_sensor
   # Register: 210, Bit: 15, default: true, TODO: verify default
   - platform: template
-    name: "Parameter Setting 1 Enable Water Heating"
+    name: "210 Parameter Setting 1 Enable Water Heating"
     id: "${devicename}_parameter_setting_1_enable_water_heating"
     icon: mdi:eye
     restore_mode: DISABLED
@@ -2597,7 +2599,7 @@ switch:
 
   # Register: 211, Bit: 0, default: false, TODO: verify default 0=pipe
   - platform: template
-    name: "Parameter Setting 2 IBH AHS Installation Position"
+    name: "211 Parameter Setting 2 IBH AHS Installation Position"
     id: "${devicename}_parameter_setting_2_ibh_ahs_installation_position"
     icon: mdi:eye
     restore_mode: DISABLED
@@ -2629,7 +2631,7 @@ switch:
           }
   # Register: 211, Bit: 1, default: false, TODO: verify default
   - platform: template
-    name: "Parameter Setting 2 Tbt Sensor Enable"
+    name: "211 Parameter Setting 2 Tbt Sensor Enable"
     id: "${devicename}_parameter_setting_2_tbt_sensor_enable"
     icon: mdi:eye
     restore_mode: DISABLED
@@ -2661,7 +2663,7 @@ switch:
           }
   # Register: 211, Bit: 2, default: false, TODO: verify default
   - platform: template
-    name: "Parameter Setting 2 Ta Sensor Position"
+    name: "211 Parameter Setting 2 Ta Sensor Position"
     id: "${devicename}_parameter_setting_2_ta_sensor_position"
     icon: mdi:eye
     restore_mode: DISABLED
@@ -2693,7 +2695,7 @@ switch:
           }
   # Register: 211, Bit: 3, default: false, TODO: verify default
   - platform: template
-    name: "Parameter Setting 2 Double Zone Setting Is Valid"
+    name: "211 Parameter Setting 2 Double Zone Setting Is Valid"
     id: "${devicename}_parameter_setting_2_double_zone_setting_is_valid"
     icon: mdi:eye
     restore_mode: DISABLED
@@ -2725,7 +2727,7 @@ switch:
           }
   # Register: 211, Bit: 4, default: false, TODO: verify default
   - platform: template
-    name: "Parameter Setting 2 Setting The High Low Temperature Of Heating Mode T1S"
+    name: "211 Parameter Setting 2 Setting The High Low Temperature Of Heating Mode T1S"
     id: "${devicename}_parameter_setting_2_setting_the_high_low_temperature_of_heating_mode_t1s"
     icon: mdi:eye
     restore_mode: DISABLED
@@ -2757,7 +2759,7 @@ switch:
           }
   # Register: 211, Bit: 5, default: false, TODO: verify default
   - platform: template
-    name: "Parameter Setting 2 Setting The High Low Temperature Of Cooling Mode T1S"
+    name: "211 Parameter Setting 2 Setting The High Low Temperature Of Cooling Mode T1S"
     id: "${devicename}_parameter_setting_2_setting_the_high_low_temperature_of_cooling_mode_t1s"
     icon: mdi:eye
     restore_mode: DISABLED
@@ -2788,7 +2790,7 @@ switch:
   # Register: 211, Bit: 6, default: false, TODO: verify default
   # Midea: T1B sensor enable -buffer sensor
   - platform: template
-    name: "Parameter Setting 2 Tw2 Enabled"
+    name: "211 Parameter Setting 2 Tw2 Enabled"
     id: "${devicename}_parameter_setting_2_tw2_enabled"
     icon: mdi:eye
     restore_mode: DISABLED
@@ -2818,7 +2820,7 @@ switch:
           }
   # Register: 211, Bit: 7, default: false, TODO: verify default
   - platform: template
-    name: "Parameter Setting 2 Smart Grid"
+    name: "211 Parameter Setting 2 Smart Grid"
     id: "${devicename}_parameter_setting_2_smart_grid"
     icon: mdi:eye
     restore_mode: DISABLED
@@ -2848,7 +2850,7 @@ switch:
           }
   # Register: 211, Bit: 8, default: false, TODO: verify default
   - platform: template
-    name: "Parameter Setting 2 Port Definition"
+    name: "211 Parameter Setting 2 Port Definition"
     id: "${devicename}_parameter_setting_2_port_definition"
     icon: mdi:eye
     restore_mode: DISABLED
@@ -2878,7 +2880,7 @@ switch:
           }
   # Register: 211, Bit: 9, default: false, TODO: verify default
   - platform: template
-    name: "Parameter Setting 2 Solar Energy Kit Enable"
+    name: "211 Parameter Setting 2 Solar Energy Kit Enable"
     id: "${devicename}_parameter_setting_2_solar_energy_kit_enable"
     icon: mdi:eye
     restore_mode: DISABLED
@@ -2910,7 +2912,7 @@ switch:
           }
   # Register: 211, Bit: 10, default: false, TODO: verify default, Solar energy input port 1: CN18 0: CN11
   - platform: template
-    name: "Parameter Setting 2 Solar Energy Input Port"
+    name: "211 Parameter Setting 2 Solar Energy Input Port"
     id: "${devicename}_parameter_setting_2_solar_energy_input_port"
     icon: mdi:eye
     restore_mode: DISABLED
@@ -2942,7 +2944,7 @@ switch:
           }
   # Register: 211, Bit: 11, default: false, TODO: verify default
   - platform: template
-    name: "Parameter Setting 2 Piping Length Selection"
+    name: "211 Parameter Setting 2 Piping Length Selection"
     id: "${devicename}_parameter_setting_2_piping_length_selection"
     icon: mdi:eye
     restore_mode: DISABLED
@@ -2974,7 +2976,7 @@ switch:
           }
   # Register: 211, Bit: 12, default: false, TODO: verify default
   - platform: template
-    name: "Parameter Setting 2 Tbt2 Sensor Is Valid"
+    name: "211 Parameter Setting 2 Tbt2 Sensor Is Valid"
     id: "${devicename}_parameter_setting_2_tbt2_sensor_is_valid"
     icon: mdi:eye
     restore_mode: DISABLED
@@ -3006,7 +3008,7 @@ switch:
           }
   # Register: 211, Bit: 13, default: false, TODO: verify default
   - platform: template
-    name: "Parameter Setting 2 Enable Temperature Collection Kit"
+    name: "211 Parameter Setting 2 Enable Temperature Collection Kit"
     id: "${devicename}_parameter_setting_2_enable_temperature_collection_kit"
     icon: mdi:eye
     restore_mode: DISABLED
@@ -3038,7 +3040,7 @@ switch:
           }
   # Register: 211, Bit: 14, default: false, TODO: verify default
   - platform: template
-    name: "Parameter Setting 2 M1M2 Is Used For AHS Control"
+    name: "211 Parameter Setting 2 M1M2 Is Used For AHS Control"
     id: "${devicename}_parameter_setting_2_m1m2_is_used_for_ahs_control"
     icon: mdi:eye
     restore_mode: DISABLED
@@ -3074,7 +3076,7 @@ number:
   # Register: 2 (Zone 1, Low)
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Set Water Temperature T1S Zone 1"
+    name: "002 Set Water Temperature T1S Zone 1"
     id: "${devicename}_set_water_temperature_t1s_zone_1"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -3111,7 +3113,7 @@ number:
   # Register: 2 (Zone 2, High)
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Set Water Temperature T1S Zone 2"
+    name: "002 Set Water Temperature T1S Zone 2"
     id: "${devicename}_set_water_temperature_t1s_zone_2"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -3146,7 +3148,7 @@ number:
   # Register: 3
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Air Temperature Ts"
+    name: "003 Air Temperature Ts"
     id: "${devicename}_air_temperature_ts"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -3167,7 +3169,7 @@ number:
   # Register: 4
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Set DHW Tank Temperature T5s"
+    name: "004 Set DHW Tank Temperature T5s"
     id: "${devicename}_set_dhw_tank_temperature_t5s"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -3182,7 +3184,7 @@ number:
   # Register: 6 (Zone 1, Low)
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Weather Compensation Curve Zone 1"
+    name: "006 Weather Compensation Curve Zone 1"
     id: "${devicename}_weather_compensation_curve_zone_1"
     icon: mdi:eye
     register_type: holding
@@ -3224,7 +3226,7 @@ number:
   # Register: 6 (Zone 2, High)
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Weather Compensation Curve Zone 2"
+    name: "006 Weather Compensation Curve Zone 2"
     id: "${devicename}_weather_compensation_curve_zone_2"
     icon: mdi:eye
     register_type: holding
@@ -3259,7 +3261,7 @@ number:
   # Register: 209, default: 5
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "DHW Pump Return Running Time"
+    name: "209 DHW Pump Return Running Time"
     id: "${devicename}_dhw_pump_return_running_time"
     icon: mdi:clock-check-outline
     register_type: holding
@@ -3272,7 +3274,7 @@ number:
   # Register: 212, default: 5
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "dT5_On"
+    name: "212 dT5_On"
     id: "${devicename}_dt5_on"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -3285,7 +3287,7 @@ number:
   # Register: 213, default: 10
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "dT1S5"
+    name: "213 dT1S5"
     id: "${devicename}_dt1s5"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -3298,7 +3300,7 @@ number:
   # Register: 214, default: 5
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "T Interval DHW"
+    name: "214 T Interval DHW"
     id: "${devicename}_t_interval_dhw"
     icon: mdi:clock-check-outline
     register_type: holding
@@ -3311,7 +3313,7 @@ number:
   # Register: 215, default: 43
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "T4 DHW max"
+    name: "215 T4 DHW max"
     id: "${devicename}_t4_dhw_max"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -3324,7 +3326,7 @@ number:
   # Register: 216, default: -10
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "T4 DHW min"
+    name: "216 T4 DHW min"
     id: "${devicename}_t4dhwmin"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -3337,7 +3339,7 @@ number:
   # Register: 217, default: 30
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "t TBH Delay"
+    name: "217 t TBH Delay"
     id: "${devicename}_t_tbh_delay"
     icon: mdi:camera-timer
     register_type: holding
@@ -3352,7 +3354,7 @@ number:
   # Also known as dT5S TBH Off (dt5s_tbh_off)
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "dT5 TBH Off"
+    name: "218 dT5 TBH Off"
     id: "${devicename}_dt5_tbh_off"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -3365,7 +3367,7 @@ number:
   # Register: 219, default: 5
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "T4 TBH On"
+    name: "219 T4 TBH On"
     id: "${devicename}_t4_tbh_on"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -3378,7 +3380,7 @@ number:
   # Register: 220, default: 65
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Temperature For Disinfection Operation"
+    name: "220 Temperature For Disinfection Operation"
     id: "${devicename}_t5s_di"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -3391,7 +3393,7 @@ number:
   # Register: 221, default: 210
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Maximum Disinfection Duration"
+    name: "221 Maximum Disinfection Duration"
     id: "${devicename}_t_di_max"
     icon: mdi:clock
     register_type: holding
@@ -3404,7 +3406,7 @@ number:
   # Register: 222, default: 15
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Disinfection High Temperature Duration"
+    name: "222 Disinfection High Temperature Duration"
     id: "${devicename}_t_di_hightemp"
     icon: mdi:clock
     register_type: holding
@@ -3417,7 +3419,7 @@ number:
   # Register: 223, default: 5
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Time Interval Of Compressor Startup In Cooling mode"
+    name: "223 Time Interval Of Compressor Startup In Cooling mode"
     id: "${devicename}_t_interval_c"
     icon: mdi:clock
     register_type: holding
@@ -3430,7 +3432,7 @@ number:
   # Register: 224, default: 5
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "dT1SC"
+    name: "224 dT1SC"
     id: "${devicename}_dt1sc"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -3443,7 +3445,7 @@ number:
   # Register: 225, default: 2
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "dTSC"
+    name: "225 dTSC"
     id: "${devicename}_dtsc"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -3456,7 +3458,7 @@ number:
   # Register: 226, default: 43
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "T4cmax"
+    name: "226 T4cmax"
     id: "${devicename}_t4cmax"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -3469,7 +3471,7 @@ number:
   # Register: 227, default: 10
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "T4cmin"
+    name: "227 T4cmin"
     id: "${devicename}_t4cmin"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -3482,7 +3484,7 @@ number:
   # Register: 228, default: 5
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Time Interval Of Compressor Startup In Heating mode"
+    name: "228 Time Interval Of Compressor Startup In Heating mode"
     id: "${devicename}_t_interval_h"
     icon: mdi:clock
     register_type: holding
@@ -3495,7 +3497,7 @@ number:
   # Register: 229, default: 5
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "dT1SH"
+    name: "229 dT1SH"
     id: "${devicename}_dt1sh"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -3508,7 +3510,7 @@ number:
   # Register: 230, default: 2
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "dTSH"
+    name: "230 dTSH"
     id: "${devicename}_dtsh"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -3521,7 +3523,7 @@ number:
   # Register: 231, default: 25
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "T4hmax"
+    name: "231 T4hmax"
     id: "${devicename}_t4hmax"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -3534,7 +3536,7 @@ number:
   # Register: 232, default: -15
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "T4hmin"
+    name: "232 T4hmin"
     id: "${devicename}_t4hmin"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -3547,7 +3549,7 @@ number:
   # Register: 233, default: -5
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Ambient Temperature For Enabling Hydraulic Module Auxiliary Electric Heating IBH"
+    name: "233 Ambient Temperature For Enabling Hydraulic Module Auxiliary Electric Heating IBH"
     id: "${devicename}_t4_ibh_on"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -3560,7 +3562,7 @@ number:
   # Register: 234, default: 5, TODO: verify min/max value
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Temperature Return Difference For Enabling The Hydraulic Module Auxiliary IBH"
+    name: "234 Temperature Return Difference For Enabling The Hydraulic Module Auxiliary IBH"
     id: "${devicename}_dt1_ibh_on"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -3573,7 +3575,7 @@ number:
   # Register: 235, default: 30
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Delay Time Of Enabling The Hydraulic Module Auxiliary Electric Heating IBH"
+    name: "235 Delay Time Of Enabling The Hydraulic Module Auxiliary Electric Heating IBH"
     id: "${devicename}_t_ibh_delay"
     icon: mdi:camera-timer
     register_type: holding
@@ -3586,7 +3588,7 @@ number:
   # Register: 237, default: 10, TODO: verify default
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Ambient Temperature Trigger For AHS"
+    name: "237 Ambient Temperature Trigger For AHS"
     id: "${devicename}_t4_ahs_on"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -3599,7 +3601,7 @@ number:
   # Register: 238, default: 5, TODO: verify max/max value
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Trigger Temperature Difference Between T1S And Current Heat for AHS"
+    name: "238 Trigger Temperature Difference Between T1S And Current Heat for AHS"
     id: "${devicename}_dt1_ahs_on"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -3612,7 +3614,7 @@ number:
   # Register: 240, default: 30
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Delay Time for Enabling AHS"
+    name: "240 Delay Time for Enabling AHS"
     id: "${devicename}_t_ahs_delay"
     icon: mdi:camera-timer
     register_type: holding
@@ -3625,7 +3627,7 @@ number:
   # Register: 241, default: 120
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Water Heating Max Duration"
+    name: "241 Water Heating Max Duration"
     id: "${devicename}_t_dhwhp_max"
     icon: mdi:clock-check-outline
     register_type: holding
@@ -3638,7 +3640,7 @@ number:
   # Register: 242, default: 30
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "T DHWHP Restrict"
+    name: "242 T DHWHP Restrict"
     id: "${devicename}_t_dhwhp_restrict"
     icon: mdi:clock-check-outline
     register_type: holding
@@ -3651,7 +3653,7 @@ number:
   # Register: 243, default: 25
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "T4autocmin"
+    name: "243 T4autocmin"
     id: "${devicename}_t4autocmin"
     icon: mdi:thermometer
     register_type: holding
@@ -3664,7 +3666,7 @@ number:
   # Register: 244, default: 17
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "T4autohmax"
+    name: "244 T4autohmax"
     id: "${devicename}_t4autohmax"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -3677,7 +3679,7 @@ number:
   # Register: 245, default: 25
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Heating Or Cooling Temperature When Holiday Mode Is Active"
+    name: "245 Heating Or Cooling Temperature When Holiday Mode Is Active"
     id: "${devicename}_t1s_h_a_h"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -3690,7 +3692,7 @@ number:
   # Register: 246, default: 25
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Domestic Hot Water Temperature When Holiday Mode is Active"
+    name: "246 Domestic Hot Water Temperature When Holiday Mode is Active"
     id: "${devicename}_t5s_h_a_dhw"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -3703,7 +3705,7 @@ number:
   # Register: 247, default: 10
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "PER START Ratio"
+    name: "247 PER START Ratio"
     id: "${devicename}_per_start_ratio"
     icon: mdi:eye
     register_type: holding
@@ -3716,7 +3718,7 @@ number:
   # Register: 248, default: 5
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "TIME ADJUST"
+    name: "248 TIME ADJUST"
     id: "${devicename}_time_adjust"
     icon: mdi:clock
     register_type: holding
@@ -3729,7 +3731,7 @@ number:
   # Register: 249, default: 15
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "DTbt2"
+    name: "249 DTbt2"
     id: "${devicename}_dtbt2"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -3742,7 +3744,7 @@ number:
   # Register: 250, default: 0
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "IBH1 Power"
+    name: "250 IBH1 Power"
     id: "${devicename}_ibh1_power"
     icon: mdi:alpha-w
     register_type: holding
@@ -3756,7 +3758,7 @@ number:
   # Register: 251, default: 0
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "IBH2 Power"
+    name: "251 IBH2 Power"
     id: "${devicename}_ibh2_power"
     icon: mdi:alpha-w
     register_type: holding
@@ -3770,7 +3772,7 @@ number:
   # Register: 252, default: 0
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "TBH Power"
+    name: "252 TBH Power"
     id: "${devicename}_tbh_power"
     icon: mdi:alpha-w
     register_type: holding
@@ -3784,7 +3786,7 @@ number:
   # Register: 255, default: 8
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Temperature Rise Day Number"
+    name: "255 Temperature Rise Day Number"
     id: "${devicename}_t_dryup"
     icon: mdi:calendar-week
     register_type: holding
@@ -3796,7 +3798,7 @@ number:
   # Register: 256, default: 5
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Drying Day Number"
+    name: "256 Drying Day Number"
     id: "${devicename}_t_highpeak"
     icon: mdi:calendar-week
     register_type: holding
@@ -3808,7 +3810,7 @@ number:
   # Register: 257, default: 5
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Temperature Drop Day Number"
+    name: "257 Temperature Drop Day Number"
     id: "${devicename}_t_dryd"
     icon: mdi:calendar-week
     register_type: holding
@@ -3820,7 +3822,7 @@ number:
   # Register: 258, default: 45
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Highest Drying Temperature"
+    name: "258 Highest Drying Temperature"
     id: "${devicename}_t_drypeak"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -3833,7 +3835,7 @@ number:
   # Register: 259, default: 72
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Running Time Of Floor Heating For The First Time"
+    name: "259 Running Time Of Floor Heating For The First Time"
     id: "${devicename}_t_firstfh"
     icon: mdi:clock-check-outline
     register_type: holding
@@ -3846,7 +3848,7 @@ number:
   # Register: 260, default: 25
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "T1S Of Floor Heating For The First Time"
+    name: "260 T1S Of Floor Heating For The First Time"
     id: "${devicename}_t1s_firstfh"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -3859,7 +3861,7 @@ number:
   # Register: 261, default: 10
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "T1SetC1"
+    name: "261 T1SetC1"
     id: "${devicename}_t1setc1"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -3872,7 +3874,7 @@ number:
   # Register: 262, default: 16
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "T1SetC2"
+    name: "262 T1SetC2"
     id: "${devicename}_t1setc2"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -3885,7 +3887,7 @@ number:
   # Register: 263, default: 35
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "T4C1"
+    name: "263 T4C1"
     id: "${devicename}_t4c1"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -3898,7 +3900,7 @@ number:
   # Register: 264, default: 25
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "T4C2"
+    name: "264 T4C2"
     id: "${devicename}_t4c2"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -3911,7 +3913,7 @@ number:
   # Register: 265, default: 35
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "T1SetH1"
+    name: "265 T1SetH1"
     id: "${devicename}_t1seth1"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -3924,7 +3926,7 @@ number:
   # Register: 266, default: 28
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "T1SetH2"
+    name: "266 T1SetH2"
     id: "${devicename}_t1seth2"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -3937,7 +3939,7 @@ number:
   # Register: 267, default: -5
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "T4H1"
+    name: "267 T4H1"
     id: "${devicename}_t4h1"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -3950,7 +3952,7 @@ number:
   # Register: 268, default: 7
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "T4H2"
+    name: "268 T4H2"
     id: "${devicename}_t4h2"
     icon: mdi:temperature-celsius
     register_type: holding
@@ -3963,7 +3965,7 @@ number:
   # Register: 270 (Low, heating), default: 0.5
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "t_T4 FRESH_H"
+    name: "270 t_T4 FRESH_H"
     id: "${devicename}_t_t4_fresh_h"
     icon: mdi:clock-check-outline
     register_type: holding
@@ -4013,7 +4015,7 @@ number:
   # Register: 270 (High, cooling), default: 0.5
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "t_T4 FRESH_C"
+    name: "270 t_T4 FRESH_C"
     id: "${devicename}_t_t4_fresh_c"
     icon: mdi:clock-check-outline
     register_type: holding
@@ -4058,7 +4060,7 @@ number:
   # In modbus register this is called T_PUMPI_DELAY, in the menu this is called t_DELAY_PUMP
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Built-in Circulating Pump Delay"
+    name: "271 Built-in Circulating Pump Delay"
     id: "${devicename}_t_delay_pump"
     icon: mdi:camera-timer
     register_type: holding
@@ -4451,7 +4453,7 @@ text_sensor:
   # Register: 101
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Operating Mode"
+    name: "101 Operating Mode"
     id: "${devicename}_operating_mode"
     icon: mdi:state-machine
     register_type: holding
@@ -4471,7 +4473,7 @@ text_sensor:
   # Register: 200 (High byte)
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Home Appliance Type"
+    name: "200 Home Appliance Type"
     id: "${devicename}_home_appliance_type"
     icon: mdi:state-machine
     register_type: holding
@@ -4492,7 +4494,7 @@ text_sensor:
   # Register: 200 (Low byte, first 4 bits)
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Home Appliance Sub Type"
+    name: "200 Home Appliance Sub Type"
     id: "${devicename}_home_appliance_sub_type"
     icon: "mdi:information-box-outline"
     register_type: holding
@@ -4513,7 +4515,7 @@ text_sensor:
   # Register: 200 (Low byte, second 4 bits)
   - platform: modbus_controller
     modbus_controller_id: "${devicename}"
-    name: "Home Appliance Product Code"
+    name: "200 Home Appliance Product Code"
     id: "${devicename}_home_appliance_product_code"
     icon: "mdi:information-box-outline"
     register_type: holding
